@@ -1,0 +1,1752 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.videoWrapper {
+ position: relative;
+ padding-bottom: 56.25%; /* 16:9 */
+ padding-top: 25px;
+ height: 0;
+}
+.videoWrapper iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>C Language Sample Programs | DivStacks</title>
+    <link href="../../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../../css/lightbox.css" rel="stylesheet"> 
+    <link href="../../css/animate.min.css" rel="stylesheet"> 
+	<link href="../../css/main.css" rel="stylesheet">
+	<link href="../../css/responsive.css" rel="stylesheet">
+
+
+
+    <!--[if lt IE 9
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="../../images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../../images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../../images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../../images/ico/apple-touch-icon-57-precomposed.png">
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "7e8eb33b-fbe0-4915-9b93-09490e3d10df", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+</head><!--/head-->
+
+<script>
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+	document.getElementById("cookie").style.visibility = "hidden";
+			document.getElementById("cookie").style.height = "0px";
+    } else {
+		document.getElementById("cookie").style.visibility = "visible";
+       user = "divstack_user";
+       if (user != "" && user != null) {
+           setCookie("username", user, 30);
+       }
+    }
+	}
+
+</script>
+<body onload="checkCookie()">
+	<header id="header">      
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 overflow">
+                   <div class="social-icons pull-right">
+                        <ul class="nav nav-pills">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div> 
+                </div>
+             </div>
+        </div>
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="../../index.html">
+						<div class="row">
+						<div class="col-md-6">
+                        <h1><img src="../../images/logo.png" alt="logo" height="50"width="50"></h1>
+						</div>
+						<div class="col-md-6">
+                        <h1>DivStacks</h1>
+						</div>
+                        
+						</div>
+                    </a>
+                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../index.html"><b>Home</b></a></li>
+                        <li class="dropdown"><a href="#"><b>Pages </b><i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="../../aboutus.html"><b>About</b></a></li>
+                                <li><a href="../../aboutus2.html"><b>About 2</b></a></li>
+                                <li><a href="../../service.html"><b>Services</b></a></li>
+                                <li><a href="../../pricing.html"><b>Pricing</b></a></li>
+                                <li><a href="../../contact.html"><b>Contact us</b></a></li>
+                                <li><a href="../../contact2.html"><b>Contact us 2</b></a></li>
+                                <li><a href="../../404.html"><b>404 error</b></a></li>
+                                <li><a href="../../coming-soon.html"><b>Coming Soon</b></a></li>
+                            </ul>
+                        </li>                    
+                        <li class="dropdown active"><a href="#"><b>Learn </b><i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                 <li><a class="active" href="../../clanguage/C-Language-Outline.html"><b>Learn C</b></a></li>
+                                <li><a href="../../coming-soon.html"><b>Learn C++</b></a></li>
+                                <li><a href="../../coming-soon.html"><b>Learn C#</b></a></li>
+                            </ul>
+                        </li>
+                        <li class="dropdown"><a href="../../portfolio.html"><b>Portfolio</b> <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="../../portfolio.html"><b>Portfolio Default</b></a></li>
+                                <li><a href="../../portfoliofour.html"><b>Isotope 3 Columns + Right Sidebar</b></a></li>
+                                <li><a href="../../portfolioone.html"><b>3 Columns + Right Sidebar</b></a></li>
+                                <li><a href="../../portfoliotwo.html"><b>3 Columns + Left Sidebar</b></a></li>
+                                <li><a href="../../portfoliothree.html"><b>2 Columns</b></a></li>
+                                <li><a href="../../portfolio-details.html"><b>Portfolio Details</b></a></li>
+                            </ul>
+                        </li>                         
+                        <li><a href="../../shortcodes.html "><b>Shortcodes</b></a></li>                    
+                    </ul>
+                </div>
+                <!--<div class="search">
+                    <form role="form">
+                        <i class="fa fa-search"></i>
+                        <div class="field-toggle">
+                            <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                        </div>
+                    </form>
+                </div>-->
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+<div class="alert alert-danger fade in" id="cookie">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4>Alert! Cookies on the DivStacks website. </h4>
+                            <p>"We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the DivStacks website. However, if you would like to, you can change your cookie settings at any time."</p>
+                        </div>
+    <section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">Learn C Language</h1>
+                            <p>C Language Sample Programs</p>
+                        </div>                                                                                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#page-breadcrumb-->
+
+    <section id="blog-details" class="padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-7">
+                    <div class="row">
+                         <div class="col-md-12 col-sm-12">
+                            <div class="single-blog blog-details two-column">
+                              
+								
+                                <div class="post-content overflow">
+									
+                                    <h2 class="post-title bold"><a href="#">C Sample Programs</a></h2>
+                                    <h3 class="post-author"><a href="#">Posted by Ussaid Iqbal</a></h3>
+                                     <div class="post-bottom overflow">
+						
+						
+			<div id="accordion-container">
+                <div class="panel-group" id="accordion">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c1">
+                                    <b>C Program to Print a Sentence</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c1" class="panel-collapse collapse in">
+                            <div class="panel-body">
+							<p>To understand this example, you should have knowledge of following C programming topics:</p>
+							<p>C Programming Input Output (I/O)</p>
+							<center><h2><b>Source Code</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">
+<span style="color:#06f;font-style:italic">/* C Program to print a sentence. */</span>
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+   printf("C Programming"); /* printf() prints the content inside quotation */
+   return 0;
+}
+</pre>
+							<center><h2><b>Output</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">C Programming</pre>
+                            <p>Every C program starts executing code from main() function. Inside main(), there is a printf() function which prints the content inside the quotation mark which is "C Programming" in this case.</p>
+							</div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c2">
+                                    <b>C Program to Print a Integer Entered by a User</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c2" class="panel-collapse collapse">
+                            <div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Variables and Constants</p>
+<p>C Programming Data Types</p>
+<p>C Programming Input Output (I/O)</p>
+							<center><h2><b>Source Code</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    int num;
+    printf("Enter a integer: ");  
+    scanf("%d",&amp;num);  /* Storing a integer entered by user in variable num */
+    printf("You entered: %d",num);
+    return 0;
+}
+</pre>
+							<center><h2><b>Output</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">Enter a integer: <span style="color:#06f">25</span>
+You entered: <span style="color:#06f">25</span>
+</pre>
+<p>In this program, a variable num is declared of type integer using keyword int. The printf() function prints the content inside quotation mark which is "Enter a integer: ". Then, the scanf() takes integer value from user and stores it in variable num. Finally, the value entered by user is displayed in the screen using printf().</p>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c3">
+                                    <b>C Program to Add Two Integers</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c3" class="panel-collapse collapse">
+                            <div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Data Types</p>
+<p>C Programming Variables and Constants</p>
+<p>C Programming Input Output (I/O)</p>
+<p>C Programming Operators</p>
+<p>In this program, user is asked to enter two integers and this program will add these two integers and display it.</p>
+							<center><h2><b>Source Code</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/*C programming source code to add and display the sum of two integers entered by user */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>( )
+{
+    int num1, num2, sum;
+    printf("Enter two integers: ");
+    scanf("%d %d",&amp;num1,&amp;num2); /* Stores the two integer entered by user in variable num1 and num2 */
+
+    sum=num1+num2;      /* Performs addition and stores it in variable sum */
+    printf("Sum: %d",sum);  /* Displays sum */
+    return 0;
+}
+</pre>
+							<center><h2><b>Output</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter two integers: <span style="color:#06f">12</span>
+<span style="color:#06f">11</span>
+Sum: <span style="color:#06f">23</span>
+</pre>
+<p>In this program, user is asked to enter two integers. The two integers entered by user will be stored in variables num1 and num2 respectively. This is done using scanf() function. Then, + operator is used for adding variables num1 and num2 and this value is assigned to variable sum.</p>
+<p>Adding two numbers in C programming</p>
+<p>Finally, the sum is displayed and program is terminated.</p>
+<p>There are three variables used for performing this task but, you can perform this same task using 2 variables only. It can done by assiging the sum of num1 and num2 to one of these variables.</p>
+							<center><h2><b>Source Code</b></h2></center>
+ <pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C programming source code to add and display the sum of two integers entered by user using two variables only. */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>( )
+{
+    int num1, num2, sum;
+    printf("Enter a two integers: ");
+    scanf("%d %d",&amp;num1,&amp;num2);     
+    num1=num1+num2; /* Adds variables num1 and num2 and stores it in num1 */
+    printf("Sum: %d",num1); /* Displays value of num1 */
+    return 0;
+}
+</pre>
+<p>This source code above calculates the sum of two integers and displays using only two variables.</p>
+ </div>
+                        </div>
+                    </div>
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c4">
+                                  <b>C Program to Multiply two Floating Point Numbers</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c4" class="panel-collapse collapse">
+                            <div class="panel-body">
+							<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Variables and Constants</p>
+<p>C Programming Data Types</p>
+<p>C Programming Input Output (I/O)</p>
+<p>C Programming Operators</p>
+<p>In this program, user is asked to enter two floating point numbers and this program will mulitply these two numbers and display it.</p>
+							<center><h2><b>Source Code</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/*C program to multiply and display the product of two floating point numbers entered by user. */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>( )
+{
+    float num1, num2, product;
+    printf("Enter two numbers: ");
+    scanf("%f %f",&amp;num1,&amp;num2);        /* Stores the two floating point numbers entered by user in variable num1 and num2 respectively */
+    product = num1*num2;  /* Performs multiplication and stores it */
+    printf("Product: %f",product);
+    return 0;
+}
+</pre>
+							<center><h2><b>Output</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">Enter two numbers: <span style="color:#06f">2.4</span>
+<span style="color:#06f">1.1</span>
+Product: <span style="color:#06f">2.640000</span>
+</pre>
+<p>In this program, user is asked to enter two floating point numbers. These two numbers entered by user will be stored in variables num1 and num2 respectively. This is done using scanf() function. Then, * operator is used for multiplying variables and this value is stored in variable product.</p>
+<p>Then, the product is displayed and program is terminated.</p>
+                            </div>
+                        </div>
+                    </div>
+					
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c5">
+                                  <b>C Program to Find ASCII Value of a Character</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c5" class="panel-collapse collapse">
+                            <div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Data Types</p>
+<p>C Programming Variables and Constants</p>
+<p>C Programming Input Output (I/O)</p>
+<p>Every character in C programming is given an integer value to represent it. That integer value is known as ASCII value of that character. For example: ASCII value of 'a' is 97. When a character is stored in variable of type char, the ASCII value of character is stored instead of that character itself character itself. For example: If you try to store character 'a' in a char type variable, ASCII value of that character is stored which is 97.</p>
+<p>In, this program user is asked to enter a character and this program will display the ASCII value of that character.</p>
+
+							<center><h2><b>Source Code</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* Source code to find ASCII value of a character entered by user */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+    char c;
+    printf("Enter a character: ");
+    scanf("%c",&amp;c);        /* Takes a character from user */
+    printf("ASCII value of %c = %d",c,c);
+    return 0;
+}
+</pre>
+							<center><h2><b>Output</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">Enter a character: G
+ASCII value of G = <span style="color:#06f">71</span>
+</pre>
+<p>In this program, user is asked to enter a character and this character will be stored in variable c, i.e., the ASCII value of that character is stored in variable c. When, this value is displayed using conversion format string %c, the actual variable is displayed but, when this variable is displayed using format string %d, the ASCII value of that character is displayed.</p>
+               </div>
+                        </div>
+                    </div>
+					
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c6">
+                                  <b>C Program to Find Quotient and Remainder of Two Integers Entered by User</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c6" class="panel-collapse collapse">
+                            <div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Data Types</p>
+<p>C Programming Variables and Constants</p>
+<p>C Programming Input Output (I/O)</p>
+<p>C Programming Operators</p>
+<p>In this program, user is asked to enter two integers(dividend and divisor) and this program will compute the quotient and remainder and display it.</p>
+							<center><h2><b>Source Code</b></h2></center>
+						<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C Program to compute remainder and quotient  */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+    int dividend, divisor, quotient, remainder;
+    printf("Enter dividend: ");
+    scanf("%d",&amp;dividend);
+    printf("Enter divisor: ");
+    scanf("%d",&amp;divisor);
+    quotient=dividend/divisor;           /*  Computes quotient */
+    remainder=dividend%divisor;          /* Computes remainder */
+    printf("Quotient = %d\n",quotient);
+    printf("Remainder = %d",<span style="color:#33f;font-weight:700">remainder</span>);
+    return 0;
+}
+</pre>	
+							<center><h2><b>Output</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">Enter dividend: <span style="color:#06f">25</span>
+Enter divisor: <span style="color:#06f">4</span>
+Quotient = <span style="color:#06f">6</span>
+Remainder = <span style="color:#06f">1</span>
+</pre>
+<p>This program takes two integers(dividend and divisor) from user and stores it in variable dividend and divisor. Then, quotient and remainder is calculated and stored in variable quotient and remainder. Operator / is used for calculation of quotient and % is used for calculating remainder. </p>
+<p>You can also program can be performed using only two variables as:</p> 
+							<center><h2><b>Source Code</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">
+<span style="color:#06f;font-style:italic">/* C Program to compute and display remainder and quotient  using only two variables */</span>
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+  int dividend, divisor;
+  printf("Enter dividend: ");
+  scanf("%d",&amp;dividend);
+  printf("Enter divisor: ");
+  scanf("%d",&amp;divisor);
+  printf("Quotient = %d\n",dividend/divisor);/* Computes and displays quotient */
+  printf("Remainder = %d",dividend%divisor); /* Computes and displays remainder */
+  return 0;
+}
+</pre>
+<p>Output of this program is same as program above but, only two variables are used in this case instead of four variables.</p>
+ </div>
+                        </div>
+                    </div>
+					
+					
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c7">
+                                  <b>C Program to Find Size of int, float, double and char of Your System</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c7" class="panel-collapse collapse">
+                            <div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Data Types</p>
+<p>C Programming Variables and Constants</p>
+<p>C Programming Input Output (I/O)</p>
+<p>The size of a character is always 1 byte but, size of int, float and double variables differs from system to system. This program will compute the size of int, float, double and char of you system using sizeof operator. The syntax of size of operator is:</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000">temp = <span style="color:#00f">sizeof</span>(operand);
+<span style="color:#06f;font-style:italic">/* Here, temp is a variable of type integer,i.e, sizeof() operator 
+   returns integer value. */</span>
+</pre>
+	
+							<center><h2><b>Source Code</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">
+<span style="color:#06f;font-style:italic">/* This program computes the size of variable using sizeof operator.*/</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+    int a;
+    float b;
+    double c;
+    char d;
+    printf("Size of int: %d bytes\n",<span style="color:#00f">sizeof</span>(a));
+    printf("Size of float: %d bytes\n",<span style="color:#00f">sizeof</span>(b));
+    printf("Size of double: %d bytes\n",<span style="color:#00f">sizeof</span>(c));
+    printf("Size of char: %d byte\n",<span style="color:#00f">sizeof</span>(d));
+    return 0;
+}
+</pre>
+							<center><h2><b>Output</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#33f;font-weight:700">Size</span> of <span style="font-weight:700">int</span>: <span style="color:#06f">4</span> bytes
+<span style="color:#33f;font-weight:700">Size</span> of <span style="font-weight:700">float</span>: <span style="color:#06f">4</span> bytes
+<span style="color:#33f;font-weight:700">Size</span> of <span style="font-weight:700">double</span>: <span style="color:#06f">8</span> bytes
+<span style="color:#33f;font-weight:700">Size</span> of <span style="font-weight:700">char</span>: <span style="color:#06f">1</span> byte
+</pre>
+<p><b>Note:</b> You may get different output depending upon your system.</p?>
+<p>In this program, 4 variables a, b, c and d are declared of type int, float, double and char respectively. Then, the size of these variables is computed using sizeof operator and displayed.</p>                          </div>
+                        </div>
+                    </div>
+					
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c8">
+                                  <b>C Program to Demonstrate the Working of Keyword long</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c8" class="panel-collapse collapse">
+                            <div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Data Types</p>
+<p>C Programming Variables and Constants</p>
+<p>C Programming Input Output (I/O)</p>
+<p>Keyword long is used for altering the size of data type. For example: the size of int is either 2 bytes or 4 bytes but, when long keyword is used, the size of long int will be either 4 bytes or 8 bytes. Also, you can use long long int. The size of long long int is generally 8 bytes. This program will demonstrate the size of keyword long for my system. It may be different in your system.</p>
+							<center><h2><b>Source Code</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+    int a;
+    long int b;                /* int is optional. */
+    long long int c;            /* int is optional. */
+    printf("Size of int = %d bytes\n",<span style="color:#00f">sizeof</span>(a));
+    printf("Size of long int = %ld bytes\n",<span style="color:#00f">sizeof</span>(b));
+    printf("Size of long long int = %ld bytes",<span style="color:#00f">sizeof</span>(c));
+    return 0;
+}
+</pre>
+							<center><h2><b>Output</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#33f;font-weight:700">Size</span> of <span style="font-weight:700">int</span> = <span style="color:#06f">4</span> bytes
+<span style="color:#33f;font-weight:700">Size</span> of <span style="font-weight:700">long</span> <span style="font-weight:700">int</span> = <span style="color:#06f">4</span> bytes
+<span style="color:#33f;font-weight:700">Size</span> of <span style="font-weight:700">long</span> <span style="font-weight:700">long</span> <span style="font-weight:700">int</span> = <span style="color:#06f">8</span> bytes
+</pre>
+<p>In this program, the sizeof operator is used for finding the size of int, long int and long long int.</p>
+<p>Thus, <code>int</code> and <code>long int</code> for my system can hold values from -2<sup>31</sup> to 2<sup>31</sup>-1. If I have to work on data outside this range, I have to use <code>long long int</code>, which can hold values from -2<sup>63</sup> to 2<sup>63</sup>-1 .</p>
+<p>Similarly, the long keyword can be used double and floats types.</p>
+                            </div>
+                        </div>
+                    </div>
+					
+					
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c9">
+                                  <b>C Program to Swap Two Numbers</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c9" class="panel-collapse collapse">
+                            <div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Data Types</p>
+<p>C Programming Operators</p>
+<p>C Programming Input Output (I/O)</p>
+<p>This program asks user to enter two numbers and this program will swap the value of these two numbers.</p>
+							<center><h2><b>Source Code</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+      float a, b, temp;
+      printf("Enter value of a: ");
+      scanf("%f",&amp;a);
+      printf("Enter value of b: ");
+      scanf("%f",&amp;b);
+      temp = a;    /* Value of a is stored in variable temp */
+      a = b;       /* Value of b is stored in variable a */
+      b = temp;    /* Value of temp(which contains initial value of a) is stored in variable b*/
+      printf("\nAfter swapping, value of a = %.2f\n", a);
+      printf("After swapping, value of b = %.2f", b);
+      return 0;
+}
+
+</pre>
+					<center><h2><b>Output</b></h2></center>
+					<pre style="background:rgba(238,238,238,0.92);color:#000">Enter value of a: <span style="color:#06f">1.20</span>
+Enter value of b: <span style="color:#06f">2.45</span>
+
+After swapping, value of a = <span style="color:#06f">2.45</span>
+After swapping, value of b = <span style="color:#06f">1.2</span>
+</pre>
+                            </div>
+                        </div>
+                    </div>
+					
+					
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c10">
+                                  <b>C Program to Check Whether a Number is Even or Odd</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c10" class="panel-collapse collapse">
+                            <div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C Programming if, if..else and Nested if...else Statement</p>
+<p>Numbers perfectly divisible by 2 are known even numbers and numbers which are not divisible by 2 are called odd numbers. This program takes an integer from user and checks whether that number is even or odd and displays the result.</p>
+							<center><h2><b>Source Code</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/*C program to check whether a number entered by user is even or odd. */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+      int num;
+      printf("Enter an integer you want to check: ");
+      scanf("%d",&amp;num);
+      if((num%2)==0)      /* Checking whether remainder is 0 or not. */
+           printf("%d is even.",num);
+      else
+           printf("%d is odd.",num);
+      return 0;
+}
+</pre>
+							<center><h2><b>Output 1</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an integer you want to check: <span style="color:#06f">25</span>
+<span style="color:#06f">25</span> is odd.
+</pre>
+							<center><h2><b>Output 2</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an integer you want to check: <span style="color:#06f">12</span>
+<span style="color:#06f">12</span> is even.
+</pre>
+<p>In this program, user is asked to enter an integer which is stored in variable num. Then, the remainder is found when that number is divided by 2 and checked whether remainder is 0 or not. If remainder is 0 then, that number is even otherwise that number is odd. This task is performed using if...else statement in C programming and the result is displayed accordingly.</p>
+<p>This program also can be solved using conditional operator[ ?: ] which is the shorthand notation for if...else statement.</p>
+							<center><h2><b>Source Code</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C program to check whether an integer is odd or even using conditional operator */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+    int num;
+    printf("Enter an integer you want to check: ");
+    scanf("%d",&amp;num);
+    ((num%2)==0) ? printf("%d is even.",num) : printf("%d is odd.",num);
+    return 0;
+}
+</pre>
+                            </div>
+                        </div>
+                    </div>
+					
+					
+					<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c11">
+                                  <b>C Program to Check Vowel or Consonant</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c11" class="panel-collapse collapse">
+                            <div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C Programming if, if..else and Nested if...else Statement</p>
+<p>Alphabets a, e, i, o and u are known as vowels and all alphabets except these characters are known as consonants. This program asks user to enter a character and checks whether that character is  vowel or not.</p>
+							<center><h2><b>Source Code</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+  char c;
+  printf("Enter an alphabet: ");
+  scanf("%c",&amp;c);
+  if(c=='a'||c=='A'||c=='e'||c=='E'||c=='i'||c=='I'||c=='o'||c=='O'||c=='u'||c=='U')
+       printf("%c is a vowel.",c);
+  else
+       printf("%c is a consonant.",c);
+  return 0;
+}
+</pre>
+							<center><h2><b>Output 1</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an alphabet: i
+i is a vowel.
+</pre>
+							<center><h2><b>Output 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an alphabet: G
+G is a consonant.
+</pre>
+<p>In this program, user is asked to enter a character which is stored in variable c. Then, this character is checked, whether it is any one of these ten characters a, A, e, E, i, I, o, O, u and U using logical OR operator ||. If that character is any one of these ten characters, that alphabet is a vowel if not that alphabet is a consonant.</p>
+<p>This program also can be solved using conditional operator which is shorthand notation for if else statement.</p>
+							<center><h2><b>Source Code</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C program to check whether a character is vowel or consonant using conditional operator */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+ char c;
+ printf("Enter an alphabet: ");
+ scanf("%c",&amp;c);
+ (c=='a'||c=='A'||c=='e'||c=='E'||c=='i'||c=='I'||c=='o'||c=='O'||c=='u'||c=='U') ? printf("%c is a vowel.",c) : printf("%c is a consonant.",c);
+  return 0;
+}
+</pre>
+                            </div>
+                        </div>
+                    </div>
+					
+						<div class="panel panel-default">
+                        <div class="panel-heading">
+                            <h4 class="panel-title">
+                                <a data-toggle="collapse" data-parent="#accordion" href="#c12">
+                                  <b>C Program to Find the Largest Number Among Three Numbers</b>
+                                </a>
+                            </h4>
+                        </div>
+                        <div id="c12" class="panel-collapse collapse">
+                            <div class="panel-body">
+							<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C Programming if, if..else and Nested if...else Statement</p>
+<p>In this program user is asked to enter three numbers and this program will find the largest number among three numbers entered by user. This program can be solved in more than one way.</p>
+							<center><h2><b>Source Code 1</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C program to find largest number using if statement only */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+      float a, b, c;
+      printf("Enter three numbers: ");
+      scanf("%f %f %f", &amp;a, &amp;b, &amp;c);
+      if(a>=b &amp;&amp; a>=c)
+         printf("Largest number = %.2f", a);
+      if(b>=a &amp;&amp; b>=c)
+         printf("Largest number = %.2f", b);
+      if(c>=a &amp;&amp; c>=b)
+         printf("Largest number = %.2f", c);
+      return 0;
+}
+</pre>
+							<center><h2><b>Source Code 2</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C program to find largest number using if...else statement */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+      float a, b, c;
+      printf("Enter three numbers: ");
+      scanf("%f %f %f", &amp;a, &amp;b, &amp;c);
+      if (a>=b)
+      {
+          if(a>=c)
+            printf("Largest number = %.2f",a);
+          else
+            printf("Largest number = %.2f",c);
+      }
+      else
+      {
+          if(b>=c)
+            printf("Largest number = %.2f",b);
+          else
+            printf("Largest number = %.2f",c);
+      }
+      return 0;
+}
+</pre>
+							<center><h2><b>Source Code 3</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C Program to find largest number using nested if...else statement */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+      float a, b, c;
+      printf("Enter three numbers: ");
+      scanf("%f %f %f", &amp;a, &amp;b, &amp;c);
+      if(a>=b &amp;&amp; a>=c)
+         printf("Largest number = %.2f", a);
+      else if(b>=a &amp;&amp; b>=c)
+         printf("Largest number = %.2f", b);
+      else
+         printf("Largest number = %.2f", c);
+      return 0;
+}
+</pre>
+<p>Though the technique to solve this problem is different in these three examples, output of all these program is same.</p>
+							<center><h2><b>Output</b></h2></center>
+							<pre style="background:rgba(238,238,238,0.92);color:#000">Enter three numbers: <span style="color:#06f">12.2</span>
+<span style="color:#06f">13.452</span>
+<span style="color:#06f">10.193</span>
+Largest number = <span style="color:#06f">13.45</span>
+</pre>
+                            </div>
+                        </div>
+                    </div>
+					
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c13">
+<b>C program to Find all Roots of a Quadratic equation</b>
+</a></h4></div>
+<div id="c13" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C Programming if, if..else and Nested if...else Statement</p>
+<p>Suppose you want of find roots of a quadratic equation ax2+bx+c=0 where a, b and c are coefficients. This program will ask the coefficients: a, b and c from user and displays the roots.</p>						
+<center><h2><b>Source Code</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C Program to find roots of a quadratic equation when coefficients are entered by user. */</span>
+<span style="color:#06f;font-style:italic">/* Library function sqrt() computes the square root. */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;math.h></span> <span style="color:#06f;font-style:italic">/* This is needed to use sqrt() function.*/</span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+  float a, b, c, determinant, r1,r2, real, imag;
+  printf("Enter coefficients a, b and c: ");
+  scanf("%f%f%f",&amp;a,&amp;b,&amp;c);
+  determinant=b*b-4*a*c;
+  if (determinant>0)
+  {
+      r1= (-b+<span style="color:#33f;font-weight:700">sqrt</span>(determinant))/(2*a);
+      r2= (-b-<span style="color:#33f;font-weight:700">sqrt</span>(determinant))/(2*a);
+      printf("Roots are: %.2f and %.2f",r1 , r2);
+  }
+  else if (determinant==0)
+  {
+    r1 = r2 = -b/(2*a);
+    printf("Roots are: %.2f and %.2f", r1, r2);
+  }
+  else
+  {
+    real= -b/(2*a);
+    imag = sqrt(-determinant)/(2*a);
+    printf("Roots are: %.2f+%.2fi and %.2f-%.2fi", real, imag, real, imag);
+  }
+  return 0;
+}
+</pre>
+<center><h2><b>Output 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter coefficients a, b and c: <span style="color:#06f">2.3</span>
+<span style="color:#06f">4</span>
+<span style="color:#06f">5.6</span>
+Roots are: -<span style="color:#06f">0.87</span>+<span style="color:#06f">1.</span>30i and -<span style="color:#06f">0.87</span>-<span style="color:#06f">1.</span>30i
+</pre>
+<center><h2><b>Output 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter coefficients a, b and c: <span style="color:#06f">4</span>
+<span style="color:#06f">1</span>
+<span style="color:#06f">0</span>
+Roots are: <span style="color:#06f">0.00</span> and -<span style="color:#06f">0.25</span>
+</pre>
+<p>To solve this program, library function sqrt() is used. This function calculates the square root of a number.</p>
+</div> </div></div>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c14">
+<b>C Program to Check Leap Year</b>
+</a></h4></div>
+<div id="c14" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C Programming if, if..else and Nested if...else Statement</p>
+<p>All years which are perfectly divisible by 4 are leap years except for century years( years ending with 00 ) which is a leap year only it is perfectly divisible by 400. For example: 2012, 2004, 1968 etc are leap year but, 1971, 2006 etc are not leap year. Similarly, 1200, 1600, 2000, 2400 are leap years but, 1700, 1800, 1900 etc are not.</p>
+<p>This program asks user to enter a year and this program checks whether that year is leap year or not.</p>				
+<center><h2><b>Source Code</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">
+<span style="color:#06f;font-style:italic">/* C program to check whether a year is leap year or not using if else statement.*/</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>(){
+      int year;
+      printf("Enter a year: ");
+      scanf("%d",&amp;year);
+      if(year%4 == 0)
+      {
+          if( year%100 == 0) /* Checking for a century year */
+          {
+              if ( year%400 == 0)
+                 printf("%d is a leap year.", year);
+              else
+                 printf("%d is not a leap year.", year);
+          }
+          else
+             printf("%d is a leap year.", year );
+      }
+      else
+         printf("%d is not a leap year.", year);
+      return 0;
+}
+</pre>
+<center><h2><b>Output 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter year: <span style="color:#06f">1900</span>
+<span style="color:#06f">1900</span> is not a leap year.
+</pre>
+<center><h2><b>Output 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter year: <span style="color:#06f">2012</span>
+<span style="color:#06f">2012</span> is a leap year.
+</pre>
+</div> </div></div>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c15">
+<b>C Program to Check Whether a Number is Positive or Negative</b>
+</a></h4></div>
+<div id="c15" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C Programming if, if..else and Nested if...else Statement</p>
+<p>This program takes a number from user and checks whether that number is either positive or negative or zero.</p>						
+<center><h2><b>Source Code 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    float num;
+    printf("Enter a number: ");
+    scanf("%f",&amp;num);
+    if (num&lt;=0)
+    {
+        if (num==0)
+          printf("You entered zero.");
+        else
+          printf("%.2f is negative.",num);
+    }
+    else
+      printf("%.2f is positive.",num);
+    return 0;
+}
+</pre>
+<p>This program also can be solved using nested if else statement.</p>
+<center><h2><b>Source Code 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C programming code to check whether a number is negative or positive or zero using nested if...else statement. */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    float num;
+    printf("Enter a number: ");
+    scanf("%f",&amp;num);
+    if (num&lt;0)      /* Checking whether num is less than 0*/
+      printf("%.2f is negative.",num);
+    else if (num>0)   /* Checking whether num is greater than zero*/
+      printf("%.2f is positive.",num);
+    else
+      printf("You entered zero.");
+    return 0;
+}
+</pre>
+<center><h2><b>Output 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter a number: <span style="color:#06f">12.3</span>
+<span style="color:#06f">12.30</span> is positive.
+</pre>
+<center><h2><b>Output 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter a number: <span style="color:#06f">0</span>
+You entered zero.
+</pre>
+</div> </div></div>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c16">
+<b>C Program to Check Whether a Character is an Alphabet or not</b>
+</a></h4></div>
+<div id="c16" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:.</p>
+<p>C Programming Operators.</p>
+<p>C Programming if, if..else and Nested if...else Statement.</p>
+<p>This program takes a character from user and checks whether that character is an alphabet or not.</p>						
+<center><h2><b>Source Code</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C programming code to check whether a character is alphabet or not.*/</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    char c;
+    printf("Enter a character: ");
+    scanf("%c",&amp;c);
+    if( (c>='a'&amp;&amp; c&lt;='z') || (c>='A' &amp;&amp; c&lt;='Z'))
+       printf("%c is an alphabet.",c);
+    else
+       printf("%c is not an alphabet.",c);
+    return 0;
+}
+</pre>
+<center><h2><b>Output 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter a character: *
+* is not an alphabet
+</pre>
+<center><h2><b>Output 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter a character: K
+K is an alphabet</pre>
+<p>When a character is stored in a variable, ASCII value of that character is stored instead of that character itself. For example: If  'a' is stored in a variable, ASCII value of 'a' which is 97 is stored. If you see the ASCII table, the lowercase alphabets are from 97 to 122 and uppercase letter are from 65 to 90. If the ASCII value of number stored is between any of these two intervals then, that character will be an alphabet. In this program, instead of number 97, 122, 65 and 90; we have used 'a', 'z', 'A' and 'Z' respectively which is basically the same thing.</p>
+</div> </div></div>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c17">
+<b>C Program to Calculate Sum of Natural Numbers</b>
+</a></h4></div>
+<div id="c17" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C Programming if, if..else and Nested if...else Statement</p>
+<p>C Programming for Loop</p>
+<p>C programming while and do...while Loop</p>
+<p>Positive integers 1, 2, 3, 4... are known as natural numbers. This program takes a positive integer from user( suppose user entered n ) then, this program displays the value of 1+2+3+....n.</p>						
+<center><h2><b>Source Code 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* This program is solved using while loop. */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    int n, count, sum=0;
+    printf("Enter an integer: ");
+    scanf("%d",&amp;n);
+    count=1;
+    while(count&lt;=n)       /* while loop terminates if count>n */
+    {
+        sum+=count;       /* sum=sum+count */
+        ++count;
+    }
+    printf("Sum = %d",sum);
+    return 0;
+}
+</pre>
+<center><h2><b>Source Code 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* This program is solve using for loop. */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    int n, count, sum=0;
+    printf("Enter an integer: ");
+    scanf("%d",&amp;n);
+    for(count=1;count&lt;=n;++count)  /* for loop terminates if count>n */
+    {
+        sum+=count;                /* sum=sum+count */
+    }
+    printf("Sum = %d",sum);
+    return 0;
+}
+</pre>
+<center><h2><b>Output 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an integer: <span style="color:#06f">100</span>
+Sum = <span style="color:#06f">5050</span>
+</pre>
+<p>Both program above does exactly the same thing. Initially, the value of count is set to 1. Both program have test condition to perform looping iteration until condition count<=n becomes false and in each iteration ++count is executed. </p>
+<p>This program works perfectly for positive number but, if user enters negative number or 0, Sum = 0 is displayed but, it is better is display the error message in this case. The above program can be made user-friendly by adding if else statement as:</p>
+<center><h2><b>Source Code 3</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* This program displays error message when user enters negative number or 0 and displays the sum of natural numbers if user enters positive number. */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    int n, count, sum=0;
+    printf("Enter an integer: ");
+    scanf("%d",&amp;n);
+    if ( n&lt;= 0)
+        printf("Error!!!!");
+    else
+    {
+       for(count=1;count&lt;=n;++count)  /* for loop terminates if count>n */
+       { 
+          sum+=count;                    /* sum=sum+count */
+       }
+       printf("Sum = %d",sum);
+    }
+    return 0;
+}
+
+</pre>
+</div> </div></div>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c18">
+<b>C Program to Find Factorial of a Number</b>
+</a></h4></div>
+<div id="c18" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C Programming if, if..else and Nested if...else Statement</p>
+<p>C Programming for Loop</p>		
+<p><b>For any positive number n, its factorial is given by:</b></p>
+<pre style="background:rgba(238,238,238,0.92);color:#000">factorial = <span style="color:#06f">1</span>*<span style="color:#06f">2</span>*<span style="color:#06f">3</span>*<span style="color:#06f">4</span>....n
+</pre>
+<p>If a number is negative, factorial does not exist and factorial of 0 is 1.</p>
+<p>This program takes an integer from a user. If user enters negative integer, this program will display error message and if user enters non-negative integer, this program will display the factorial of that number.</p>
+<center><h2><b>Source Code</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C program to display factorial of an integer if user enters non-negative integer. */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    int n, count;
+    unsigned long long int factorial=1;         
+    printf("Enter an integer: ");
+    scanf("%d",&amp;n);
+    if ( n&lt; 0)
+        printf("Error!!! Factorial of negative number doesn't exist.");
+    else
+    {
+       for(count=1;count&lt;=n;++count)    /* for loop terminates if count>n */
+       {
+          factorial*=count;              /* factorial=factorial*count */
+       }
+    printf("Factorial = %lu",factorial);
+    }
+    return 0;
+}
+</pre>
+<center><h2><b>Output 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an integer: -<span style="color:#06f">5</span>
+Error!!! Factorial of negative number doesn<span style="color:#093">'t exist.
+</span></pre>
+<center><h2><b>Output 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an integer: <span style="color:#06f">10</span>
+Factorial = <span style="color:#06f">3628800</span>
+</pre>
+<p>Here the type of factorial variable is declared as: unsigned long long. It is because, the factorial is always positive, so unsigned keyword is used and the factorial of a number can be pretty large. For example: the factorial of 10 is 3628800 thus, long long keyword is used. </p>
+</div> </div></div>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c19">
+<b>C program to Generate Multiplication Table</b>
+</a></h4></div>
+<div id="c19" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C Programming for Loop</p>
+<p>This program asks user to enter an integer and this program will generate the multiplication table upto 10.</p>			
+<center><h2><b>Source Code 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C program to find multiplication table up to 10. */</span>
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    int n, i;
+    printf("Enter an integer to find multiplication table: ");
+    scanf("%d",&amp;n);
+    for(i=1;i&lt;=10;++i)
+    {
+        printf("%d * %d = %d\n", n, i, n*i);
+    }
+    return 0;
+}
+</pre>
+<center><h2><b>Output</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an integer to find multiplication table: <span style="color:#06f">9</span>
+<span style="color:#06f">9</span> * <span style="color:#06f">1</span> = <span style="color:#06f">9</span>
+<span style="color:#06f">9</span> * <span style="color:#06f">2</span> = <span style="color:#06f">18</span>
+<span style="color:#06f">9</span> * <span style="color:#06f">3</span> = <span style="color:#06f">27</span>
+<span style="color:#06f">9</span> * <span style="color:#06f">4</span> = <span style="color:#06f">36</span>
+<span style="color:#06f">9</span> * <span style="color:#06f">5</span> = <span style="color:#06f">45</span>
+<span style="color:#06f">9</span> * <span style="color:#06f">6</span> = <span style="color:#06f">54</span>
+<span style="color:#06f">9</span> * <span style="color:#06f">7</span> = <span style="color:#06f">63</span>
+<span style="color:#06f">9</span> * <span style="color:#06f">8</span> = <span style="color:#06f">72</span>
+<span style="color:#06f">9</span> * <span style="color:#06f">9</span> = <span style="color:#06f">81</span>
+<span style="color:#06f">9</span> * <span style="color:#06f">10</span> = <span style="color:#06f">90</span>
+</pre>
+<p>This program generates multiplication table of an integer up 10. But, this program can be made more user friendly by giving option to user to enter number up to which, he/she want to generate multiplication table. The source code below will perform this task.</p>
+<center><h2><b>Source Code 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    int n, range, i;
+    printf("Enter an integer to find multiplication table: ");
+    scanf("%d",&amp;n);
+    printf("Enter range of multiplication table: ");
+    scanf("%d",&amp;range);
+    for(i=1;i&lt;=range;++i)
+    {
+        printf("%d * %d = %d\n", n, i, n*i);
+    }
+    return 0;
+}
+</pre>
+<center><h2><b>Output 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an integer to find multiplication table: <span style="color:#06f">6</span>
+Enter range of multiplication table: <span style="color:#06f">4</span>
+<span style="color:#06f">6</span> * <span style="color:#06f">1</span> = <span style="color:#06f">6</span>
+<span style="color:#06f">6</span> * <span style="color:#06f">2</span> = <span style="color:#06f">12</span>
+<span style="color:#06f">6</span> * <span style="color:#06f">3</span> = <span style="color:#06f">18</span>
+<span style="color:#06f">6</span> * <span style="color:#06f">4</span> = <span style="color:#06f">24</span>
+</pre>
+</div> </div></div>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c20">
+<b>C Program to Display Fibonacci Series</b>
+</a></h4></div>
+<div id="c20" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C programming while and do...while Loop</p>			
+
+<center><h2><b>Source Code 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* Displaying Fibonacci sequence up to nth term where n is entered by user. */</span>
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+  int count, n, t1=0, t2=1, display=0;
+  printf("Enter number of terms: ");
+  scanf("%d",&amp;n);
+  printf("Fibonacci Series: %d+%d+", t1, t2); /* Displaying first two terms */
+  count=2;    /* count=2 because first two terms are already displayed. */
+  while (count&lt;n)  
+  {
+      display=t1+t2;
+      t1=t2;
+      t2=display;
+      ++count;
+      printf("%d+",display);
+  }
+  return 0;
+}
+</pre>
+<center><h2><b>Output 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter number of terms: <span style="color:#06f">10</span>
+Fibonacci Series: <span style="color:#06f">0</span>+<span style="color:#06f">1</span>+<span style="color:#06f">1</span>+<span style="color:#06f">2</span>+<span style="color:#06f">3</span>+<span style="color:#06f">5</span>+<span style="color:#06f">8</span>+<span style="color:#06f">13</span>+<span style="color:#06f">21</span>+<span style="color:#06f">34</span>+
+</pre>
+<p>Suppose, instead of number of terms, you want to display the Fibonacci series util the term is less than certain number entered by user. Then, this can be done using source code below:</p>
+<center><h2><b>Source Code 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* Displaying Fibonacci series up to certain number entered by user. */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+  int t1=0, t2=1, display=0, num;
+  printf("Enter an integer: ");
+  scanf("%d",&amp;num);
+  printf("Fibonacci Series: %d+%d+", t1, t2); /* Displaying first two terms */
+  display=t1+t2;
+  while(display&lt;num)
+  {
+      printf("%d+",display);
+      t1=t2;
+      t2=display;
+      display=t1+t2;
+  }
+  return 0;
+}
+</pre>
+<center><h2><b>Output 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an integer: <span style="color:#06f">200</span>
+Fibonacci Series: <span style="color:#06f">0</span>+<span style="color:#06f">1</span>+<span style="color:#06f">1</span>+<span style="color:#06f">2</span>+<span style="color:#06f">3</span>+<span style="color:#06f">5</span>+<span style="color:#06f">8</span>+<span style="color:#06f">13</span>+<span style="color:#06f">21</span>+<span style="color:#06f">34</span>+<span style="color:#06f">55</span>+<span style="color:#06f">89</span>+<span style="color:#06f">144</span>+
+</pre>
+</div> </div></div>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c21">
+<b>C Program to Find GCD of two Numbers</b>
+</a></h4></div>
+<div id="c21" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C Programming for Loop</p>
+<p>C Programming if, if..else and Nested if...else Statement</p>
+<p>C programming while and do...while Loop</p>
+<p>The greatest common divisor (GCD) of two integers is a largest positive integer(non-zero) that divides the numbers without a remainder.</p>						
+<p>There are many ways to find the GCD of two numbers is C programming. All codes below will take two integers from user and displays the H.C.F of those two integers.</p>
+<center><h2><b>Source Code 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">
+<span style="color:#06f;font-style:italic">/* C Program to Find Highest Common Factor. */</span>
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    int num1, num2, i, hcf;
+    printf("Enter two integers: ");
+    scanf("%d %d", &amp;num1, &amp;num2);
+    for(i=1; i&lt;=num1 || i&lt;=num2; ++i)
+    {
+        if(num1%i==0 &amp;&amp; num2%i==0)   /* Checking whether i is a factor of both number */
+            hcf=i;
+    }
+    printf("H.C.F of %d and %d is %d", num1, num2, hcf);
+    return 0;
+}
+</pre>
+<p>In this program, two integers are taken from user and stored in variable num1 and num2. Then i is initialized to 1 and for loop is executed until i becomes equal to smallest of two numbers. In each looping iteration, it is checked whether i is factor of both numbers or not. If i is factor of both numbers, it is stored to hcf. When for loop is completed, the H.C.F of those two numbers will be stored in variable hcf.</p>
+<center><h2><b>Source Code 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+  int num1, num2, min,i;
+  printf("Enter two integers: ");
+  scanf("%d %d", &amp;num1, &amp;num2);
+  min=(num1>num2)?num2:num1; /* minimum value is stored in variable min */
+  for(i=min;i>=1;--i)
+  {
+      if(num1%i==0 &amp;&amp; num2%i==0)
+      {
+          printf("HCF of %d and %d is %d", num1, num2,i);
+           break;
+      }
+  }
+  return 0;
+}
+
+</pre>
+<p>This program is little optimized than the program above to find H.C.F. In this program, smallest of two integers entered by user is stored in variable min. Then i is initialized to min and for loop is executed. In each looping iteration, whether i is factor of these two numbers is checked. If i is a factor of these two numbers then, i will be the highest common divisor and loop is terminated using break statement.</p>
+<center><h2><b>Source Code 3</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">#include&lt;stdio.h>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    int num1,num2;
+    printf("Enter two integers: ");
+    scanf("%d %d",&amp;num1,&amp;num2);
+    printf("HCF of %d and %d is ",num1 , num2);
+    while(num1!=num2)
+    {
+        if(num1>num2)
+            num1-=num2;
+        else
+            num2-=num1;
+    }
+    printf("%d",num1);
+    return 0;
+}
+</pre>
+<p>This is the best way to find HCF of two numbers. In this method, smaller number is subtracted from larger number and that number is stored in place of larger number. This process is continued until, two numbers become equal which will be HCF.</p>
+<p><b>Note</b>All source codes above displays the same output.</p>
+<center><h2><b>Output</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter two integers: <span style="color:#06f">14</span>
+<span style="color:#06f">35</span>
+HCF of <span style="color:#06f">14</span> and <span style="color:#06f">35</span> is <span style="color:#06f">7</span>
+</pre>
+</div> </div></div>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c22">
+<b>C Program to Find LCM of two Numbers</b>
+</a></h4></div>
+<div id="c22" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>	
+<p>C Programming Operators</p>	
+<p>C Programming if, if..else and Nested if...else Statement</p>	
+<p>C programming while and do...while Loop</p>	
+<p>LCM of two integers a and b is the lowest positive integer this is perfectly divisible by both a and b.</p>					
+<center><h2><b>Source Code 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C program to find LCM of two positive integers entered by user */</span>
+
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+  int num1, num2, max;
+  printf("Enter two positive integers: ");
+  scanf("%d %d", &amp;num1, &amp;num2);
+  max=(num1>num2) ? num1 : num2; /* maximum value is stored in variable max */
+  while(1)                       /* Always true. */
+  {
+      if(max%num1==0 &amp;&amp; max%num2==0)
+      {
+          printf("LCM of %d and %d is %d", num1, num2,max);
+          break;          /* while loop terminates. */
+      }
+      ++max;
+  }
+  return 0;
+}
+</pre>
+<p>In this program, user is asked to enter two positive integers which will be stored in variable num1 and num2 respectively and largest of two integers is assigned to variable max. Then, while loop is executed and in each iteration it is checked whether max is perfectly divisible by two numbers entered by user or not. If max is not perfecly divisible, max is increased by 1 and this process goes not until max is perfectly divisible by both numbers. The test condition of while loop in above program is always true so, the loop is terminated using break statement.</p>
+<p>The LCM of two numbers also can be found using following formula</p>
+<pre style="background:rgba(238,238,238,0.92);color:#000">LCM=(num1*num2)/GCD
+</pre>
+<center><h2><b>Source Code 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">#include&lt;stdio.h>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    int n1,n2,temp1,temp2;
+    printf("Enter two positive integers: ");
+    scanf("%d %d",&amp;n1,&amp;n2);
+    temp1=n1;
+    temp2=n2;
+    while(temp1!=temp2)
+    {
+        if(temp1>temp2)
+            temp1-=temp2;
+        else
+            temp2-=temp1;
+    }
+    printf("LCM of two numbers %d and %d is %d", n1, n2, (n1*n2)/temp1);
+    return 0;
+}
+</pre>
+<p><b>Note.</b>The output of these two programs is same.</p>
+<center><h2><b>Output</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter two positive numbers: <span style="color:#06f">15</span>
+<span style="color:#06f">9</span>
+LCM of two numbers <span style="color:#06f">15</span> and <span style="color:#06f">9</span> is <span style="color:#06f">45</span>
+</pre>
+</div> </div></div>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c23">
+<b>C Program to Display Character from A to Z Using Loop</b>
+</a></h4></div>
+<div id="c23" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming if, if..else and Nested if...else Statement</p>
+<p>C programming while and do...while Loop</p>
+<p>This program uses loop to display character from A to Z.</p>
+<center><h2><b>Source Code 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C program to display character from A to Z using loops. */</span>
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    char c;
+    for(c='A'; c&lt;='Z'; ++c)
+       printf("%c ",c);
+    return 0;
+}
+</pre>
+<center><h2><b>Output 1</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">A B C D E F G H I J K L M N O P Q R S T U V W X Y Z
+</pre>
+<p>This program can be made little bit interactive by taking data from user and displaying the alphabets in either lowercase letter or uppercase letter depending on that data.</p>
+
+<center><h2><b>Source Code 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000"><span style="color:#06f;font-style:italic">/* C program to display character from A to Z using loops either in uppercase or lowercase depending upon the data from user */</span>
+#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+    char c;
+    printf("Enter u to display characters in uppercase and l to display in lowercase: ");
+    scanf("%c",&amp;c);
+    if(c=='U' || c=='u')
+    {
+       for(c='A'; c&lt;='Z'; ++c)
+         printf("%c ",c);
+    }
+    if (c=='L' || c=='l')
+    {
+        for(c='a'; c&lt;='z'; ++c)
+         printf("%c ",c);
+    }
+    if (c!='U' || c!='L' || c=='u' || c=='l')
+         printf("Error !!!");
+    return 0;
+}
+</pre>
+<center><h2><b>Output 2</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter U to display characters in Uppercase and L to display in lowercase: L
+a b c d e f g h i j k l m n o p q r s t u v w x y z
+</pre>
+</div> </div></div>
+
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c24">
+<b>C Program to Count Number of Digits of an Integer</b>
+</a></h4></div>
+<div id="c24" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>
+<p>C Programming Operators</p>
+<p>C programming while and do...while Loop</p>
+<p>This program takes an integer from user and calculates the number of digits in that integer. For example: If user enters 2319, the output of program will be 4 because it contains 4 digits.</p>					
+<center><h2><b>Source Code</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+  int n,count=0;
+  printf("Enter an integer: ");
+  scanf("%d", &amp;n);
+  while(n!=0)
+  {
+      n/=10;             /* n=n/10 */
+      ++count;
+  }
+  printf("Number of digits: %d",count);
+}
+</pre>
+<center><h2><b>Output</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an integer: <span style="color:#06f">34523</span>
+Number of digits: <span style="color:#06f">5</span>
+</pre>
+<p>This program takes an integer from user and stores that number in variable n. Suppose, user entered 34523. Then, while loop is executed because n!=0 will be true in first iteration. The codes inside while loop will be executed. After first iteration, value of n will be 3452 and count will be 1. Similarly, in second iteration n will be equal to 345 and count will be equal to 2. This process goes on and after fourth iteration, n will be equal to 3 and count will be equal to 4. Then, in next iteration n will be equal to 0 and count will be equal to 5 and program will be terminated as n!=0 becomes false.</p>
+</div> </div></div>
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c25">
+<b>C Program to Reverse a Number</b>
+</a></h4></div>
+<div id="c25" class="panel-collapse collapse"><div class="panel-body">
+<p>To understand this example, you should have knowledge of following C programming topics:</p>	
+<p>C Programming Operators</p>	
+<p>C programming while and do...while Loop</p>	
+<p>This program takes an integer number from user and reverses that number.</p>	
+
+<center><h2><b>Source Code</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">#<span style="color:#00f">include</span> <span style="color:#093">&lt;stdio.h></span>
+<span style="font-weight:700">int</span> <span style="color:#ff8000">main</span>()
+{
+  int n, reverse=0, rem;
+  printf("Enter an integer: ");
+  scanf("%d", &amp;n);
+  while(n!=0)
+  {
+     rem=n%10;
+     reverse=reverse*10+rem;
+     n/=10;
+  }
+  printf("Reversed Number = %d",reverse);
+  return 0;
+}
+</pre>
+<center><h2><b>Output</b></h2></center>
+<pre style="background:rgba(238,238,238,0.92);color:#000">Enter an integer: <span style="color:#06f">2345</span>
+Reversed Number = <span style="color:#06f">5432</span>
+</pre>
+</div> </div></div>
+
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c26">
+<b>Collapsible Group Item #5</b>
+</a></h4></div>
+<div id="c26" class="panel-collapse collapse"><div class="panel-body">
+						
+<center><h2><b>Source Code</b></h2></center>
+<center><h2><b>Output 1</b></h2></center>
+<center><h2><b>Output 2</b></h2></center>
+
+</div> </div></div>
+
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c27">
+<b>Collapsible Group Item #5</b>
+</a></h4></div>
+<div id="c27" class="panel-collapse collapse"><div class="panel-body">
+						
+<center><h2><b>Source Code</b></h2></center>
+<center><h2><b>Output 1</b></h2></center>
+<center><h2><b>Output 2</b></h2></center>
+
+</div> </div></div>
+
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c28">
+<b>Collapsible Group Item #5</b>
+</a></h4></div>
+<div id="c28" class="panel-collapse collapse"><div class="panel-body">
+						
+<center><h2><b>Source Code</b></h2></center>
+<center><h2><b>Output 1</b></h2></center>
+<center><h2><b>Output 2</b></h2></center>
+
+</div> </div></div>
+
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c29">
+<b>Collapsible Group Item #5</b>
+</a></h4></div>
+<div id="c29" class="panel-collapse collapse"><div class="panel-body">
+						
+<center><h2><b>Source Code</b></h2></center>
+<center><h2><b>Output 1</b></h2></center>
+<center><h2><b>Output 2</b></h2></center>
+
+</div> </div></div>
+
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c30">
+<b>Collapsible Group Item #5</b>
+</a></h4></div>
+<div id="c30" class="panel-collapse collapse"><div class="panel-body">
+						
+<center><h2><b>Source Code</b></h2></center>
+<center><h2><b>Output 1</b></h2></center>
+<center><h2><b>Output 2</b></h2></center>
+
+</div> </div></div>
+
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c31">
+<b>Collapsible Group Item #5</b>
+</a></h4></div>
+<div id="c31" class="panel-collapse collapse"><div class="panel-body">
+						
+<center><h2><b>Source Code</b></h2></center>
+<center><h2><b>Output 1</b></h2></center>
+<center><h2><b>Output 2</b></h2></center>
+
+</div> </div></div>
+
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c32">
+<b>Collapsible Group Item #5</b>
+</a></h4></div>
+<div id="c32" class="panel-collapse collapse"><div class="panel-body">
+						
+<center><h2><b>Source Code</b></h2></center>
+<center><h2><b>Output 1</b></h2></center>
+<center><h2><b>Output 2</b></h2></center>
+
+</div> </div></div>
+
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c33">
+<b>Collapsible Group Item #5</b>
+</a></h4></div>
+<div id="c33" class="panel-collapse collapse"><div class="panel-body">
+						
+<center><h2><b>Source Code</b></h2></center>
+<center><h2><b>Output 1</b></h2></center>
+<center><h2><b>Output 2</b></h2></center>
+
+</div> </div></div>
+
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c34">
+<b>Collapsible Group Item #5</b>
+</a></h4></div>
+<div id="c34" class="panel-collapse collapse"><div class="panel-body">
+						
+<center><h2><b>Source Code</b></h2></center>
+<center><h2><b>Output 1</b></h2></center>
+<center><h2><b>Output 2</b></h2></center>
+
+</div> </div></div>
+
+
+<div class="panel panel-default"><div class="panel-heading"><h4 class="panel-title">
+<a data-toggle="collapse" data-parent="#accordion" href="#c35">
+<b>Collapsible Group Item #5</b>
+</a></h4></div>
+<div id="c35" class="panel-collapse collapse"><div class="panel-body">
+						
+<center><h2><b>Source Code</b></h2></center>
+<center><h2><b>Output 1</b></h2></center>
+<center><h2><b>Output 2</b></h2></center>
+
+</div> </div></div>
+
+					
+                </div><!--/#accordion-->
+            </div><!--/#accordion-container-->
+									</div>
+                                        <ul class="nav navbar-nav post-nav">
+                                            <li><a href="#"><i class="fa fa-tag"></i>Learn C</a></li>
+                                            <li><a href="#"><i class="fa fa-heart"></i>32 Love</a></li>
+                                        </ul>
+                                   
+                                    <div class="blog-share">
+                                        <span class='st_facebook_hcount'></span>
+                                        <span class='st_twitter_hcount'></span>
+                                        <span class='st_linkedin_hcount'></span>
+                                        <span class='st_pinterest_hcount'></span>
+                                        <span class='st_email_hcount'></span>
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+						</div>
+                    </div>
+                 </div>
+                <div class="col-md-3 col-sm-5">
+                    
+                        <div class="sidebar-item categories">
+                            <center><h2><b>Menu</b></h2></center>
+                            <ul class="nav navbar-stacked">
+                               <li class="active"><a href="../../clanguage/Introduction-to-C.html">Introduction To C</a></li>
+                                <li ><a href="../../clanguage/Tokens-in-C.html">Tokens In C</a></li>
+							</ul>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        
+    </section>
+    <!--/#blog-->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center bottom-separator">
+                    <img src="../../images/home/under.png" class="img-responsive inline" alt="">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial bottom">
+                        <h2>Testimonial</h2>
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="#"><img src="../../images/home/profile1.png" alt=""></a>
+                            </div>
+                            <div class="media-body">
+                                <blockquote>I can't control what life serves me, but I can choose what to chew on, what to swallow ,and what to spit out.</blockquote>
+                                <h3><a href="#">- Ussaid Iqbal</a></h3>
+                            </div>
+                         </div>
+                     
+                    </div> 
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="contact-info bottom">
+                        <h2>Contacts</h2>
+                        <address>
+                        E-mail: <a href="mailto:stackdiv@gmail.com">stackdiv@gmail.com</a> <br> 
+                        Phone: +92 (312) 6566623 <br> 
+                        Fax: +92 (995) 616851 <br> 
+                        </address>
+
+                        <h2>Address</h2>
+                        <address>
+                        New Model City, <br> 
+                        DHQ Road, <br> 
+                        Street #, 3, Haripur <br> 
+                        Pakistan <br> 
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="contact-form bottom">
+                        <h2>Send a message</h2>
+                        <form id="main-contact-form" name="contact-form" method="post" action="../../sendemail.php">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" required="required" placeholder="Email Id">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
+                            </div>                        
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12
+                    <div class="copyright-text text-center">
+                        <p>&copy; DivStacks 2016. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+
+    <script type="text/javascript" src="../../js/jquery.js"></script>
+    <script type="text/javascript" src="../../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../../js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../../js/wow.min.js"></script>
+    <script type="text/javascript" src="../../js/main.js"></script>   
+</body>
+</html>

@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.videoWrapper {
+ position: relative;
+ padding-bottom: 56.25%; /* 16:9 */
+ padding-top: 25px;
+ height: 0;
+}
+.videoWrapper iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Learn C Language-Tokens In C</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/lightbox.css" rel="stylesheet"> 
+    <link href="../css/animate.min.css" rel="stylesheet"> 
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/responsive.css" rel="stylesheet">
+
+
+
+    <!--[if lt IE 9
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="../images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/ico/apple-touch-icon-57-precomposed.png">
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "7e8eb33b-fbe0-4915-9b93-09490e3d10df", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+</head><!--/head-->
+
+<script>
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+	document.getElementById("cookie").style.visibility = "hidden";
+			document.getElementById("cookie").style.height = "0px";
+    } else {
+		document.getElementById("cookie").style.visibility = "visible";
+       user = "divstack_user";
+       if (user != "" && user != null) {
+           setCookie("username", user, 30);
+       }
+    }
+	}
+
+</script>
+<body onload="checkCookie()">
+	<header id="header">      
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 overflow">
+                   <div class="social-icons pull-right">
+                        <ul class="nav nav-pills">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div> 
+                </div>
+             </div>
+        </div>
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="../index.html">
+						<div class="row">
+						<div class="col-md-6">
+                        <h1><img src="../images/logo.png" alt="logo" height="50"width="50"></h1>
+						</div>
+						<div class="col-md-6">
+                        <h1>DivStacks</h1>
+						</div>
+                        
+						</div>
+                    </a>
+                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../index.html"><b>Home</b></a></li>
+                        <li class="dropdown"><a href="#"><b>Pages </b><i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="../404.html"><b>404 error</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Coming Soon</b></a></li>
+                            </ul>
+                        </li>                    
+                        <li class="dropdown active"><a href="#"><b>Learn </b><i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a class="active" href="../clanguage/C-Language-Outline.html"><b>Learn C</b></a></li>
+                                <li><a class="active" href="../clanguage/C-Language-Outline.html"><b>Learn C</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn C++</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn C#</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn HTML</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn CSS</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn JAVA</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn JAVASCRIPT</b></a></li>
+                                
+                            </ul>
+                        </li>
+                       <!-- <li class="dropdown"><a href="../portfolio.html"><b>Portfolio</b> <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="../portfolio.html"><b>Portfolio Default</b></a></li>
+                                <li><a href="../portfoliofour.html"><b>Isotope 3 Columns + Right Sidebar</b></a></li>
+                                <li><a href="../portfolioone.html"><b>3 Columns + Right Sidebar</b></a></li>
+                                <li><a href="../portfoliotwo.html"><b>3 Columns + Left Sidebar</b></a></li>
+                                <li><a href="../portfoliothree.html"><b>2 Columns</b></a></li>
+                                <li><a href="../portfolio-details.html"><b>Portfolio Details</b></a></li>
+                            </ul>
+                        </li>                         
+                        <li><a href="../shortcodes.html "><b>Shortcodes</b></a></li>                    
+                    </ul>
+                </div>
+                <!--<div class="search">
+                    <form role="form">
+                        <i class="fa fa-search"></i>
+                        <div class="field-toggle">
+                            <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                        </div>
+                    </form>
+                </div>-->
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+<div class="alert alert-danger fade in" id="cookie">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4>Alert! Cookies on the DivStacks website. </h4>
+                            <p>"We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the DivStacks website. However, if you would like to, you can change your cookie settings at any time."</p>
+                        </div>
+    <section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">Learn C Language</h1>
+                            <p>Tokens In C</p>
+                        </div>                                                                                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#page-breadcrumb-->
+
+    <section id="blog-details" class="padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-7">
+                    <div class="row">
+                         <div class="col-md-12 col-sm-12">
+                            <div class="single-blog blog-details two-column">
+                                <div class="videoWrapper" style="line-height: 150%;">
+									<iframe allowfullscreen="" frameborder="0"  src="https://www.youtube.com/embed/8f9Y5H_2L3E" ></iframe><br /></div>
+									
+								
+                                <div class="post-content overflow">
+									
+                                    <h2 class="post-title bold"><a href="#">Tockens In C</a></h2>
+                                    <h3 class="post-author"><a href="#">Posted by Ussaid Iqbal</a></h3>
+                                     <div class="post-bottom overflow">
+<center><h2><b>Objective</b></h2></center>
+<p><b>•</b> Understand Language Fundamentals.</p>
+<center><h2><b>Important Questions.</b></h2></center>
+<p><b>Q:</b> What is Token?</p>
+<p><b>A:</b> A token is an object that represents something else, such as another object (either physical or virtual), or an abstract concept as, for example, a gift is sometimes referred to as a token of the giver's esteem for the recipient. In computers, there are a number of types of tokens.</p>
+<p><b>Q:</b> What are C Tokens?</p>
+<p><b>A:</b> In C Language, the smallest individual units are called Tokens.</p>
+<p><b>OR</b>
+<p>It's a unit that makes sense to the compiler.</p>
+<p><b>Q:</b> What is Compiler?</p>
+<p><b>A:</b> A compiler is a computer program (or a set of programs) that transforms source code written in a programming language (the source language) into another computer language (the target language), with the latter often having a binary form known as object code.</p>
+<center><h2><b>Types Of Tokens.</b></h2></center>
+<p>There are various types of Tokens in C language, we are going to learn only three of them today.</p>
+<p><b>1.</b>	Constants.</p>
+<p><b>2.</b>	Variables.</p>
+<p><b>3.</b>	Keywords.</p>
+<center><h2><b>1. Constants.</b></h2></center>
+<p><b>Q:</b> What is Constant?</p>
+<p><b>A:</b> Something that does not or cannot change or vary is known as Constant.</p>
+<p><b>OR</b>
+<p>A quantity assumed to be unchanged throughout a given discussion is known as Constant.</p> 
+<center><h2><b>Constants in C.</b></h2></center>
+<p>A constant refers to a value that does not change during the execution of a program. It is similar to mathematical calculations like "Pie" whose value is 22/7. Constants in C are divided in two main types:</p>
+<p><b>1.</b>	Primary Constants.</p>
+<p><b>2.</b>	Secondary Constants.</p>
+<p>Today we will only talk about Primary Constants, As we have to deal with different things in our C programs like Numbers, Percentages or Alphabets. So on this behalf the Primary constants are divided in further types:</p> 
+<p><b>1.</b>      Integer Constants.</p>
+<p><b>2.</b>      Real Constants.</p>
+<p><b>3.</b>      Character Constants.</p>
+<p>Let's take a look at them one by one.</p>
+<center><h2><b>Integer Constants.</b></h2></center>
+<p>C Integer Constant is a decimal (base 10), octal (base 8), or hexadecimal (base 16) number that represents an integer value, we use Integer Constants to represent integer values that cannot be changed.</p>
+<p><b>OR</b>
+<p>Integer constants are constants data elements that have no fractional parts or exponents.</p>
+<center><h2><b>Real Constants.</b></h2></center>
+<p>A real constant is combination of a whole numbers followed by a decimal point and the fractional part.</p>
+<p><b>OR</b></p>
+<p>Real constants are constants data elements that have some fractional parts or exponents.</p>
+<center><h2><b>Rules for constructing Real & Integer Constant.</b></h2></center>
+<p><b>1.</b>	It must have at least one digit. </p>
+<p><b>2.</b>	Real  constant must have a decimal point.</p>
+<p><b>3.</b>	Integer constant must not have a decimal point.</p>
+<p><b>4.</b>	 It can be either negative or positive.</p>
+<p><b>5.</b>	 It is assumed to be positive if there is no sign specified.</p>
+<p><b>6.</b>	 Spaces and commas are not allowed within it.</p>
+<p><b>Examples :</b></p>
+<p>Some examples of Real constants are :  45.67, -6.55, 6663.9.</p>
+<p>Some examples of Integer constants are : 426, +655, +31773, -7000.</p>
+<center><h2><b>Character Constants.</b></h2></center>
+<p>In addition to integers and real constants, the programs also need to deal with characters and strings. The character constants are used to express quantities like name, place or gender. They can be a single character or a group of characters. </p>
+<p>Types of Character Constants:</p>
+<p><b>1.</b>	Single Character Constants.</p>
+<p><b>2.</b>	String  Character Constants.</p>
+<center><h2><b>Single Character Constants :</b></h2></center>
+<p>It can be a single alphabet, a single digit or a single special symbol enclosed within single quotation marks. Both the inverted commas should point towards left. Some valid character constants are : 'a', 'b', '1', 'x'.</p>
+<center><h2><b>String Character Constants :</b></h2></center>
+<p>A group of characters is called a string. These constants are enclosed within double quotation marks. Some valid string constants are : “Ussaid", “29", "5+6". </p>
+<center><h2><b>2. Variables:</b></h2></center>
+<p><b>Q:</b> What is variable?</p>
+<p><b>A:</b> Something that does change or vary.</p>
+<p><b>OR</b></p>
+<p>A quantity assumed to be changed throughout a given discussion.	</p>
+<center><h2><b>Variables in C:</b></h2></center>
+<p>A variable is a name, given to a temporary memory location that has been used to store any value. A variable is needed, when you want to store the input of user for calculation or you want to store a piece of output generated in the mid of calculation and to store the final output of the program.
+<p><b>Rules for Constructing Variable Names:</b></p>
+<p><b>1.</b>	A variable is any combination of 1 to 31 alphabets, digits or underscore. This rule may vary with some compilers.</p>
+<p><b>2.</b>	The first character in a variable name must be an alphabet or an underscore.</p>
+<p><b>3.</b>	No commas or blanks are allowed within a variable name.</p>
+<p><b>4.</b>	No special symbol other than an underscore ( _ ) is allowed.</p>
+<p><b>5.</b>	A variable is declared by using a statement that contains the data type of the variable and the name of the variable. This statement can also contain initial value of a variable. For example, the statement "int age=18;" declares a variable age of integer type and initializes it to 18.</p>
+<p><b>6.</b>	Since the maximum allowable length of variable name is 31 characters, an enormous number of variable names can be constructed using the above mentioned rules. It is a good practice to exploit this choice in naming variables by using meaningful variable names.</p>
+
+<center><h2><b>3. Keywords:</b></h2></center>
+<p>Keywords are the words whose meaning has already been explained to the compiler. The keywords cannot be used as variable names because if we do so, we are trying to assign a new meaning to the keyword, which is not allowed by the computer.</p>
+<p>There are total 32 keywords available in C. The list of all these keywords is given as follows:</p>
+
+<ul class="elements">
+<li><i class="fa fa-angle-right"></i>auto</li>
+<li><i class="fa fa-angle-right"></i>else</li>
+<li><i class="fa fa-angle-right"></i>long</li>
+<li><i class="fa fa-angle-right"></i>switch</li>
+
+
+<li><i class="fa fa-angle-right"></i>break</li>
+<li><i class="fa fa-angle-right"></i>enum</li>
+<li><i class="fa fa-angle-right"></i>register</li>
+<li><i class="fa fa-angle-right"></i>typedef</li>
+
+
+<li><i class="fa fa-angle-right"></i>case</li>
+<li><i class="fa fa-angle-right"></i>extern</li>
+<li><i class="fa fa-angle-right"></i>return</li>
+<li><i class="fa fa-angle-right"></i>union</li>
+
+
+<li><i class="fa fa-angle-right"></i>char</li>
+<li><i class="fa fa-angle-right"></i>float</li>
+<li><i class="fa fa-angle-right"></i>short</li>
+<li><i class="fa fa-angle-right"></i>unsigned</li>
+
+
+<li><i class="fa fa-angle-right"></i>const</li>
+<li><i class="fa fa-angle-right"></i>for</li>
+<li><i class="fa fa-angle-right"></i>signed</li>
+<li><i class="fa fa-angle-right"></i>void</li>
+
+
+<li><i class="fa fa-angle-right"></i>continue</li>
+<li><i class="fa fa-angle-right"></i>goto</li>
+<li><i class="fa fa-angle-right"></i>sizeof</li>
+<li><i class="fa fa-angle-right"></i>volatile</li>
+
+
+<li><i class="fa fa-angle-right"></i>default</li>
+<li><i class="fa fa-angle-right"></i>if</li>
+<li><i class="fa fa-angle-right"></i>static</li>
+<li><i class="fa fa-angle-right"></i>while</li>
+
+
+<li><i class="fa fa-angle-right"></i>do</li>
+<li><i class="fa fa-angle-right"></i>int</li>
+<li><i class="fa fa-angle-right"></i>struct</li>
+<li><i class="fa fa-angle-right"></i>_Parked</li>
+<li><i class="fa fa-angle-right"></i>double</li>
+</ul>
+ </div>
+                                        <ul class="nav navbar-nav post-nav">
+                                            <li><a href="#"><i class="fa fa-tag"></i>Learn C</a></li>
+                                            <li><a href="#"><i class="fa fa-heart"></i>32 Love</a></li>
+                                        </ul>
+                                   
+                                    <div class="blog-share">
+                                        <span class='st_facebook_hcount'></span>
+                                        <span class='st_twitter_hcount'></span>
+                                        <span class='st_linkedin_hcount'></span>
+                                        <span class='st_pinterest_hcount'></span>
+                                        <span class='st_email_hcount'></span>
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                <div class="col-md-3 col-sm-5">
+                    
+                        <div class="sidebar-item categories">
+                            <center><h2><b>Menu</b></h2></center>
+                            <ul class="nav navbar-stacked">
+                                <li ><a href="../clanguage/Introduction-to-C.html">Introduction To C</a></li>
+                                <li class="active"><a href="../clanguage/Tokens-in-C.html">Tokens In C</a></li>
+           
+                            </ul>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#blog-->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center bottom-separator">
+                    <img src="../images/home/under.png" class="img-responsive inline" alt="">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial bottom">
+                        <h2>Testimonial</h2>
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="#"><img src="../images/home/profile1.png" alt=""></a>
+                            </div>
+                            <div class="media-body">
+                                <blockquote>I can't control what life serves me, but I can choose what to chew on, what to swallow ,and what to spit out.</blockquote>
+                                <h3><a href="#">- Ussaid Iqbal</a></h3>
+                            </div>
+                         </div>
+                     
+                    </div> 
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="contact-info bottom">
+                        <h2>Contacts</h2>
+                        <address>
+                        E-mail: <a href="mailto:stackdiv@gmail.com">stackdiv@gmail.com</a> <br> 
+                        Phone: +92 (312) 6566623 <br> 
+                        Fax: +92 (995) 616851 <br> 
+                        </address>
+
+                        <h2>Address</h2>
+                        <address>
+                        New Model City, <br> 
+                        DHQ Road, <br> 
+                        Street #, 3, Haripur <br> 
+                        Pakistan <br> 
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="contact-form bottom">
+                        <h2>Send a message</h2>
+                        <form id="main-contact-form" name="contact-form" method="post" action="../sendemail.php">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" required="required" placeholder="Email Id">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
+                            </div>                        
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12
+                    <div class="copyright-text text-center">
+                        <p>&copy; DivStacks 2016. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../js/wow.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>   
+</body>
+</html>

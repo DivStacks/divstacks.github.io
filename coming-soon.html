@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Coming Soon | Triangle</title>
+    <title>Coming Soon | DivStacks</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet"> 
     <link href="css/main.css" rel="stylesheet">
@@ -22,10 +22,50 @@
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
 
-<body>
-    <div class="logo-image">                                
-       <a href="index.html"><img class="img-responsive" src="images/logo.png" alt=""> </a> 
-    </div>
+<script>
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+	document.getElementById("cookie").style.visibility = "hidden";
+			document.getElementById("cookie").style.height = "0px";
+    } else {
+		document.getElementById("cookie").style.visibility = "visible";
+       user = "divstack_user";
+       if (user != "" && user != null) {
+           setCookie("username", user, 30);
+       }
+    }
+	}
+
+</script>
+<body onload="checkCookie()">
+<div class="alert alert-danger fade in" id="cookie">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4>Alert! Cookies on the DivStacks website. </h4>
+                            <p>"We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the DivStacks website. However, if you would like to, you can change your cookie settings at any time."</p>
+                        </div>
+   
      <section id="coming-soon">        
          <div class="container">
             <div class="row">
@@ -39,6 +79,7 @@
                             <span><a href="#"><i class="fa fa-twitter"></i></a></span>
                             <span><a href="#"><i class="fa fa-google-plus"></i></a></span>
                         </div>
+						<a href="index.html" class="btn btn-error">RETURN TO THE HOMEPAGE</a>
                     </div>                    
                 </div>
                 <div class="col-sm-12">
@@ -92,8 +133,7 @@
         <div class="row">
             <div class="col-sm-12">
                 <div class="text-center">
-                    <p>&copy; Your Company 2014. All Rights Reserved.</p>
-                    <p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
+                    <p>&copy; DivStacks 2016. All Rights Reserved.</p>
                 </div>
             </div>
         </div>       
@@ -108,7 +148,7 @@
     <script type="text/javascript">
             //Countdown js
          $("#countdown").countdown({
-                date: "10 march 2015 12:00:00",
+                date: "10 june 2016 12:00:00",
                 format: "on"
             },      
             function() {

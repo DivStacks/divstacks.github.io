@@ -1,0 +1,379 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>C Language Index | DivStacks</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/lightbox.css" rel="stylesheet"> 
+    <link href="../css/animate.min.css" rel="stylesheet"> 
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/responsive.css" rel="stylesheet">
+
+    <!--[if lt IE 9]>
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="../images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/ico/apple-touch-icon-57-precomposed.png">
+</head><!--/head-->
+<script>
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+	document.getElementById("cookie").style.visibility = "hidden";
+	document.getElementById("cookie").style.height = "0px";
+    } else {
+	document.getElementById("cookie").style.visibility = "visible";
+       user = "divstack_user";
+       if (user != "" && user != null) {
+           setCookie("username", user, 30);
+       }
+    }
+	}
+</script>
+<body onload="checkCookie()">
+
+	<header id="header">      
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 overflow">
+                   <div class="social-icons pull-right">
+                        <ul class="nav nav-pills">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div> 
+                </div>
+             </div>
+        </div>
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="../index.html">
+						<div class="row">
+						<div class="col-md-6">
+                        <h1><img src="../images/logo.png" alt="logo" height="50"width="50"></h1>
+						</div>
+						<div class="col-md-6">
+                        <h1>DivStacks</h1>
+						</div>
+                        
+						</div>
+                    </a>
+                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a  href="../index.html"><b>Home</b></a></li>
+                        <li class="dropdown"><a href="#"><b>Pages </b><i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="../404.html"><b>404 error</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Coming Soon</b></a></li>
+                            </ul>
+                        </li>                    
+                        <li class="dropdown active" ><a href="#"><b>Learn </b><i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                 <li><a class="active" href="../clanguage/C-Language-Outline.html"><b>Learn C</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn C++</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn C#</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn HTML</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn CSS</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn JAVA</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn JAVASCRIPT</b></a></li>
+                                
+                            </ul>
+                        </li>
+                        <!--<li class="dropdown"><a href="../portfolio.html"><b>Portfolio</b> <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="../portfolio.html"><b>Portfolio Default</b></a></li>
+                                <li><a href="../portfoliofour.html"><b>Isotope 3 Columns + Right Sidebar</b></a></li>
+                                <li><a href="../portfolioone.html"><b>3 Columns + Right Sidebar</b></a></li>
+                                <li><a href="../portfoliotwo.html"><b>3 Columns + Left Sidebar</b></a></li>
+                                <li><a href="../portfoliothree.html"><b>2 Columns</b></a></li>
+                                <li><a href="../portfolio-details.html"><b>Portfolio Details</b></a></li>
+                            </ul>
+                        </li>                         
+                        <li><a href="../shortcodes.html "><b>Shortcodes</b></a></li>                    
+                    </ul>
+                </div>
+                <!--<div class="search">
+                    <form role="form">
+                        <i class="fa fa-search"></i>
+                        <div class="field-toggle">
+                            <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                        </div>
+                    </form>
+                </div>-->
+            </div>
+        </div>
+    </header>
+
+<div class="alert alert-danger fade in" id="cookie">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4>Alert! Cookies on the DivStacks website. </h4>
+                            <p>"We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the DivStacks website. However, if you would like to, you can change your cookie settings at any time."</p>
+                        </div>
+    <section id="page-breadcrumb">
+	
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">C Language</h1>
+                            <p>Be C Language Guru</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+   </section>
+    <!--/#action-->
+
+    <section id="portfolio-information" class="padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-6">
+                    <img src="../images/c-language/c-book-cover.png" class="img-responsive" alt="">
+                </div>
+                <div class="col-sm-6">
+                    <div class="project-name overflow">
+                        <h2 class="bold">About this course </h2>
+                        <ul class="nav navbar-nav navbar-default">
+                            <li><a href="#"><i class="fa fa-clock-o"></i>February11,2016</a></li>
+                            <li><a href="#"><i class="fa fa-tag"></i>Programming</a></li>
+                            <li><a href="#"><i class="fa fa-tag"></i>C Language</a></li>
+                        </ul>
+                    </div>
+                    <div class="project-info overflow">
+                        <h3>Course Info</h3>
+                        <p>This course provides students with a comprehensive study of the C programming language. Classroom lectures stress the strengths of C, which provide programmers with the means of writing efficient, maintainable, and portable code. The lectures are supplemented with non-trivial lab exercises.</p>
+                        
+						<h3>Who Should Attend</h3>
+						<p>This course is for programmers/students who have had no experience in any programming language or C is theeir first programming language.</p>
+						<h3>Benefits of Attendance</h3>
+						<p>Upon completion of this course, students will be able to:</p>
+						<ul class="elements">
+                            <li><i class="fa fa-angle-right"></i> Write C programs that are non-trivial.</li>
+                            <li><i class="fa fa-angle-right"></i> Use the variety of data types appropriate to specific programming problems.</li>
+                            <li><i class="fa fa-angle-right"></i> Utilize the modular features of the language.</li>
+                            <li><i class="fa fa-angle-right"></i> Demonstrate efficiency and readability.</li>
+                            <li><i class="fa fa-angle-right"></i> Demonstrate the use of the various control flow constructs.</li>
+                            <li><i class="fa fa-angle-right"></i> Use arrays as part of the software solution.</li>
+                            <li><i class="fa fa-angle-right"></i> Utilize pointers to efficiently solve problems.</li>
+                            <li><i class="fa fa-angle-right"></i> Include the structure data type as part of the solution.</li>
+                            <li><i class="fa fa-angle-right"></i> Create their own data types.</li>
+                            <li><i class="fa fa-angle-right"></i> Use functions from the portable C library.</li>
+                        </ul>
+                    </div>
+                    <div class="skills overflow">
+                        <h3>Things Required:</h3>
+                        <ul class="nav navbar-nav navbar-default">
+                            <li><a href="#"><i class="fa fa-check-square"></i>Computer Knowledge</a></li>
+                            <li><a href="#"><i class="fa fa-check-square"></i>Good Memory</a></li>
+                            <li><a href="#"><i class="fa fa-check-square"></i>Basic Maths</a></li>
+                            <li><a href="#"><i class="fa fa-check-square"></i>Time to Practice</a></li>
+                        </ul>
+                    </div>
+                    <div class="client overflow">
+                        <h3>Leactures by:</h3>
+                        <ul class="nav navbar-nav navbar-default">
+                            <li><a href="#"><i class="fa fa-bolt"></i>Ussaid Iqbal</a></li>
+                        </ul>
+                    </div>
+                   
+                </div>
+            </div>
+        </div>
+    </section>
+     <!--/#portfolio-formation-->
+
+    <section id="related-work" class="padding-top padding-bottom">
+        <div class="container">
+            <div class="row">
+                <h1 class="title text-center">Lectures</h1>
+                <div class="col-sm-3">
+                    <div class="portfolio-wrapper">
+                        <div class="portfolio-single">
+                            <div class="post-content overflow">
+                                    <h2 class="post-title bold"><a href="Introduction-to-C.html">1. Introduction to C</a></h2>
+                                    <h3 class="post-author"><a href="#">Posted by Ussaid Iqbal</a></h3>
+                                    <p>Regardless of differences in physical appearance, virtually every computer may be envisioned as divided into six logical units or sections. 1. Input Unit. The input unit is formed by the input devices attached to the computer. An input device is a hardware device used to send data to a computer. An input device [...]</p>
+                                    <a href="Introduction-to-C.html" class="read-more">View More</a>
+                                    <div class="post-bottom overflow">
+                                        <span class="post-date pull-left">February 11, 2016</span>
+                                    </div>
+                                </div>
+                        </div>
+                       
+                    </div>
+                </div>
+                <div class="col-sm-3">
+                    <div class="portfolio-wrapper">
+                        <div class="portfolio-single">
+                             <div class="post-content overflow">
+                                    <h2 class="post-title bold"><a href="Tokens-in-C.html">2. Tokens in C</a></h2>
+                                    <h3 class="post-author"><a href="#">Posted by Ussaid Iqbal</a></h3>
+                                    <p>Regardless of differences in physical appearance, virtually every computer may be envisioned as divided into six logical units or sections. 1. Input Unit. The input unit is formed by the input devices attached to the computer. An input device is a hardware device used to send data to a computer. An input device [...]</p>
+                                    <a href="Tokens-in-C.html" class="read-more">View More</a>
+                                    <div class="post-bottom overflow">
+                                        <span class="post-date pull-left">February 11, 2016</span>
+                                    </div>
+                                </div>
+                        </div>
+                        
+                    </div>
+                </div>
+               <!-- <div class="col-sm-3">
+                    <div class="portfolio-wrapper">
+                        <div class="portfolio-single">
+                           <div class="post-content overflow">
+                                    <h2 class="post-title bold"><a href="../blogdetails.html">Advanced business cards design</a></h2>
+                                    <h3 class="post-author"><a href="#">Posted by micron News</a></h3>
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber [...]</p>
+                                    <a href="#" class="read-more">View More</a>
+                                    <div class="post-bottom overflow">
+                                        <span class="post-date pull-left">February 11, 2014</span>
+                                        <span class="comments-number pull-right"><a href="#">3 comments</a></span>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+				</div>
+                <div class="col-sm-3">
+                    <div class="portfolio-wrapper">
+                        <div class="portfolio-single">
+                           <div class="post-content overflow">
+                                    <h2 class="post-title bold"><a href="../blogdetails.html">Advanced business cards design</a></h2>
+                                    <h3 class="post-author"><a href="#">Posted by micron News</a></h3>
+                                    <p>Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber [...]</p>
+                                    <a href="#" class="read-more">View More</a>
+                                    <div class="post-bottom overflow">
+                                        <span class="post-date pull-left">February 11, 2014</span>
+                                        <span class="comments-number pull-right"><a href="#">3 comments</a></span>
+                                    </div>
+                                </div>
+                    </div>
+                </div>
+                </div>-->
+            </div>
+        </div>
+    </section>
+    <!--/#related-work-->
+
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center bottom-separator">
+                    <img src="../images/home/under.png" class="img-responsive inline" alt="">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial bottom">
+                        <h2>Testimonial</h2>
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="#"><img src="../images/home/profile1.png" alt=""></a>
+                            </div>
+                            <div class="media-body">
+                                <blockquote>I can't control what life serves me, but I can choose what to chew on, what to swallow ,and what to spit out.</blockquote>
+                                <h3><a href="#">- Ussaid Iqbal</a></h3>
+                            </div>
+                         </div>
+                     
+                    </div> 
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="contact-info bottom">
+                        <h2>Contacts</h2>
+                        <address>
+                        E-mail: <a href="mailto:stackdiv@gmail.com">stackdiv@gmail.com</a> <br> 
+                        Phone: +92 (312) 6566623 <br> 
+                        Fax: +92 (995) 616851 <br> 
+                        </address>
+
+                        <h2>Address</h2>
+                        <address>
+                        New Model City, <br> 
+                        DHQ Road, <br> 
+                        Street #, 3, Haripur <br> 
+                        Pakistan <br> 
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="contact-form bottom">
+                        <h2>Send a message</h2>
+                        <form id="main-contact-form" name="contact-form" method="post" action="../sendemail.php">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" required="required" placeholder="Email Id">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
+                            </div>                        
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12
+                    <div class="copyright-text text-center">
+                        <p>&copy; DivStacks 2016. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../js/wow.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>  
+</body>
+</html>

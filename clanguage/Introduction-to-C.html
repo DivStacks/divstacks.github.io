@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<style>
+.videoWrapper {
+ position: relative;
+ padding-bottom: 56.25%; /* 16:9 */
+ padding-top: 25px;
+ height: 0;
+}
+.videoWrapper iframe {
+ position: absolute;
+ top: 0;
+ left: 0;
+ width: 100%;
+ height: 100%;
+}
+</style>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Learn C Language-Introduction To C</title>
+    <link href="../css/bootstrap.min.css" rel="stylesheet">
+    <link href="../css/font-awesome.min.css" rel="stylesheet">
+    <link href="../css/lightbox.css" rel="stylesheet"> 
+    <link href="../css/animate.min.css" rel="stylesheet"> 
+	<link href="../css/main.css" rel="stylesheet">
+	<link href="../css/responsive.css" rel="stylesheet">
+
+
+
+    <!--[if lt IE 9
+	    <script src="js/html5shiv.js"></script>
+	    <script src="js/respond.min.js"></script>
+    <![endif]-->       
+    <link rel="shortcut icon" href="../images/ico/favicon.ico">
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="../images/ico/apple-touch-icon-144-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="../images/ico/apple-touch-icon-114-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="../images/ico/apple-touch-icon-72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" href="../images/ico/apple-touch-icon-57-precomposed.png">
+    <script type="text/javascript">var switchTo5x=true;</script>
+    <script type="text/javascript" src="http://w.sharethis.com/button/buttons.js"></script>
+    <script type="text/javascript">stLight.options({publisher: "7e8eb33b-fbe0-4915-9b93-09490e3d10df", doNotHash: false, doNotCopy: false, hashAddressBar: false});</script>
+</head><!--/head-->
+
+<script>
+
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+	document.getElementById("cookie").style.visibility = "hidden";
+			document.getElementById("cookie").style.height = "0px";
+    } else {
+		document.getElementById("cookie").style.visibility = "visible";
+       user = "divstack_user";
+       if (user != "" && user != null) {
+           setCookie("username", user, 30);
+       }
+    }
+	}
+
+</script>
+<body onload="checkCookie()">
+	<header id="header">      
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 overflow">
+                   <div class="social-icons pull-right">
+                        <ul class="nav nav-pills">
+                            <li><a href=""><i class="fa fa-facebook"></i></a></li>
+                            <li><a href=""><i class="fa fa-twitter"></i></a></li>
+                            <li><a href=""><i class="fa fa-google-plus"></i></a></li>
+                            <li><a href=""><i class="fa fa-dribbble"></i></a></li>
+                            <li><a href=""><i class="fa fa-linkedin"></i></a></li>
+                        </ul>
+                    </div> 
+                </div>
+             </div>
+        </div>
+        <div class="navbar navbar-inverse" role="banner">
+            <div class="container">
+                <div class="navbar-header">
+                    <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                        <span class="sr-only">Toggle navigation</span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                        <span class="icon-bar"></span>
+                    </button>
+
+                    <a class="navbar-brand" href="../index.html">
+						<div class="row">
+						<div class="col-md-6">
+                        <h1><img src="../images/logo.png" alt="logo" height="50"width="50"></h1>
+						</div>
+						<div class="col-md-6">
+                        <h1>DivStacks</h1>
+						</div>
+                        
+						</div>
+                    </a>
+                    
+                </div>
+                <div class="collapse navbar-collapse">
+                    <ul class="nav navbar-nav navbar-right">
+                        <li><a href="../index.html"><b>Home</b></a></li>
+                        <li class="dropdown"><a href="#"><b>Pages </b><i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="../404.html"><b>404 error</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Coming Soon</b></a></li>
+                            </ul>
+                        </li>                    
+                        <li class="dropdown active"><a href="#"><b>Learn </b><i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a class="active" href="../clanguage/C-Language-Outline.html"><b>Learn C</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn C++</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn C#</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn HTML</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn CSS</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn JAVA</b></a></li>
+                                <li><a href="../coming-soon.html"><b>Learn JAVASCRIPT</b></a></li>
+                            </ul>
+                        </li>
+                        <!--<li class="dropdown"><a href="../portfolio.html"><b>Portfolio</b> <i class="fa fa-angle-down"></i></a>
+                            <ul role="menu" class="sub-menu">
+                                <li><a href="../portfolio.html"><b>Portfolio Default</b></a></li>
+                                <li><a href="../portfoliofour.html"><b>Isotope 3 Columns + Right Sidebar</b></a></li>
+                                <li><a href="../portfolioone.html"><b>3 Columns + Right Sidebar</b></a></li>
+                                <li><a href="../portfoliotwo.html"><b>3 Columns + Left Sidebar</b></a></li>
+                                <li><a href="../portfoliothree.html"><b>2 Columns</b></a></li>
+                                <li><a href="../portfolio-details.html"><b>Portfolio Details</b></a></li>
+                            </ul>
+                        </li>                         
+                        <li><a href="../shortcodes.html "><b>Shortcodes</b></a></li>                    
+                    </ul>
+                </div>
+                <!--<div class="search">
+                    <form role="form">
+                        <i class="fa fa-search"></i>
+                        <div class="field-toggle">
+                            <input type="text" class="search-form" autocomplete="off" placeholder="Search">
+                        </div>
+                    </form>
+                </div>-->
+            </div>
+        </div>
+    </header>
+    <!--/#header-->
+
+<div class="alert alert-danger fade in" id="cookie">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4>Alert! Cookies on the DivStacks website. </h4>
+                            <p>"We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the DivStacks website. However, if you would like to, you can change your cookie settings at any time."</p>
+                        </div>
+    <section id="page-breadcrumb">
+        <div class="vertical-center sun">
+             <div class="container">
+                <div class="row">
+                    <div class="action">
+                        <div class="col-sm-12">
+                            <h1 class="title">Learn C Language</h1>
+                            <p>Introduction To C</p>
+                        </div>                                                                                
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#page-breadcrumb-->
+
+    <section id="blog-details" class="padding-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-9 col-sm-7">
+                    <div class="row">
+                         <div class="col-md-12 col-sm-12">
+                            <div class="single-blog blog-details two-column">
+                                <div class="videoWrapper" style="line-height: 150%;">
+									<iframe allowfullscreen="" frameborder="0"  src="https://www.youtube.com/embed/IG9-rRzs9C0" ></iframe><br /></div>
+									
+								
+                                <div class="post-content overflow">
+									
+                                    <h2 class="post-title bold"><a href="#">Introduction To C</a></h2>
+                                    <h3 class="post-author"><a href="#">Posted by Ussaid Iqbal</a></h3>
+                                     <div class="post-bottom overflow">
+									<center><h2><b>Objectives</b></h2></center>
+									<p><b>•</b>	 Introduction to Computers.</p>
+									<p><b>•</b>	 History of C Language.</p>
+									<center><h2><b>Introduction to Computers.</b></h2></center>
+									<p><b>Q:</b> What is Computer?</p>
+									<p><b>A:</b> Computer is an electronic device that takes input, process it and gives output.</p>
+									<center><h2><b>Computer Organization.</b><h2></center>
+									<p>Regardless of differences in physical appearance, virtually every computer may be envisioned as divided into six logical units or sections.<p>
+									<center><h2><b>1. Input Unit.</b></h2></center>
+									<p>The input unit is formed by the input devices attached to the computer.</p>
+									<p>An input device is a hardware device used to send data to a computer. An input device allows users to communicate and feed instructions and data to computers for processing, display, storage and/or transmission.</p>
+									<p><b>Examples</b> of input devices and media are: keyboard, mouse, magnetic ink character reader (MICR), optical mark reader (OMR), optical character reader (OCR), joystick etc.</p>
+									<p>The input unit is responsible for taking input and converting it into computer understandable form (the binary code). Since a computer operates on electricity, it can understand only the language of electricity that is, either ON or OFF or high voltage or low voltage. That means a computer can understand two stages ON/OFF or High/Low voltage or the binary language that uses just two symbols: 1 for ON and 0 for OFF. An input unit takes the input and converts it into binary form so that it can be understood by the computer.</p>
+									<center><h2><b>2. Output Unit.</b></h2></center>
+									<p>The output unit is formed by the output devices attached to the computer. </p>
+									<p>An output device is any device used to send data from a computer to another device or user. <b>Examples</b> include monitors, projectors, speakers, headphones and printers. </p>
+									<p>The output coming from the CPU is in the form of electronic binary signals which needs conversion in some form which can be easily understood by human beings that is, characters, graphical or audio visual. This function of conversion is performed by output units. Some popular output devices are VDU (Visual Display Unit), printer, plotter, speech synthesizer and coder etc.</p>
+									<center><h2><b>3. Memory Unit.</b></h2></center>
+									<p>A memory unit is another term used to describe computer Memory.</p>
+									<p>The memory of a computer is more like a predefined working place, where it temporarily keeps information and data to facilitate its performance. When the task is performed, it clears its memory and memory space is then available for the next task to be performed. When the power is switched off, everything stored in the memory gets erased and cannot be recalled.</p>
+									<p>The memory of computer is often called main memory or primary memory. The memory cell may be defined as a device which can store a symbol selected from a set of symbols. Each of these cells is further broken down into smaller parts known as bits. A bit means a binary digit, that is, either 0 or 1. A number of bits together are used to store data instructions by their combination.</p> 
+									<p>A bit is an elementary unit of the memory.</p>
+									<p>A group of 8 bits is called a byte and a group of 4 bits is called a nibble.</p>
+									<p>One byte is the smallest unit which can represent a data item or a character. Other units of memory are KB, MB, GB, and TB.</p>
+									<p>One KB (Kilobyte) means 210 bytes, that is, 1024 bytes. One MB (Megabyte) means 210 KB, that is, 1024X1024 bytes. One GB (Gigabyte) means 210 MB that is 1024X1024X1024 bytes. One TB (Terabyte) means 210 GB, that is, 1024 GB.</p>
+									<p>Since computer’s main memory (primary memory) is temporary, secondary memory space is needed to store data and information permanently for later use. Some most common secondary storage media are the floppy diskette, the hard disk and CD-RWs etc.. The secondary memory devices are also known as storage devices.</p>
+									<center><h2><b>4. Arithmetic & Logic Unit (ALU).</b></h2></center>
+									<p>An ALU is a digital circuit used to perform arithmetic and logic operations.</p>
+									<p>The ALU performs all the four arithmetic <b>(+,-,*,/)</b> and some logical <b>(<,>,=,<=,>=,<>)</b> operations. When two numbers are required to be added, these numbers are sent from memory to ALU where addition takes place and the result is put back in the memory. The same way other arithmetic operations are performed.</p>
+									<p>For logical operations also, the numbers to be compared are sent from memory to ALU where the comparison takes place and the result is returned to the memory. The result of a logical operation is either TRUE or FALSE. These operations provide the capability of decision-making to the computer.</p>
+									<center><h2><b>5. Central Processing Unit (CPU).</b></h2></center>
+									<p>The CPU is the control centre for a computer. It guides, directs and governs its performance. The central processing unit (CPU) of a computer is a piece of hardware that carries out the instructions of a computer program. It performs the basic arithmetical, logical, and input/output operations of a computer system. The CPU is like the brains of the computer - every instruction, no matter how simple, has to go through the CPU. </p> 
+									<p>So let's say you press the letter 'k' on your keyboard and it appears on the screen - the CPU of your computer is what makes this possible. The CPU is sometimes also referred to as the central processor unit, or processor for short.</p> 
+									<center><h2><b>6. Secondary Storage Unit.</b></h2></center>
+									<p>Secondary storage, supporting storage or external storage.</p>  
+									<p>It is non-volatile storage that is not under the direct control of a computer's central processing unit (CPU) or does not directly interact with an application. It  is a storage medium that holds information until it is deleted or overwritten regardless if the computer has power. For example, a floppy disk drive and hard disk drive are both good examples of secondary storage devices.</p>  
+
+<center><h2><b>History of C Language.</b></h2></center>
+<p><b>Q:</b> Why C language is so important?</p>
+<p><b>A:</b> C is a general-purpose language which has been closely associated with the UNIX operating system for which it was developed - since the system and most of the programs that run it are written in C.<p>
+<p><b>1)</b> Many well-known Software are written in C, like Oracle, Core libraries of Android, MySQL, Device drivers, Web browsers.<p>
+<p><b>2)</b> C is important to build Programming Skills. (Your Thoughts).<p>
+<p><b>3)</b> Easy to learn.<p>
+<p><b>4)</b> It produces efficient programs.<p>
+<p><b>5)</b> It can be compiled on a variety of computer platforms.<p>
+<center><h2><b>Matin Richards.</b></h2></center>
+<p>Many of the important ideas of C stem from the language BCPL, developed by Martin Richards in 1966. He Created BCPL language by combining features of other programming languages.<p>
+<center><h2><b>Ken Thompson.</b></h2></center>
+<p>The influence of BCPL on C proceeded indirectly through the language B, which was written by Ken Thompson in 1970 at Bell Labs, for the first UNIX system on a DEC PDP-7. BCPL and B are "type less" languages whereas C provides a variety of data types.<p>
+<center><h2><b>Dennis Ritchie.</b></h2></center>
+<p>In 1972 Dennis Ritchie at Bell Labs writes C and in 1978 the publication of The C Programming Language by Kernighan & Ritchie caused a revolution in the computing world.<p>
+<p>In 1983, the American National Standards Institute (ANSI) established a committee to provide a modern, comprehensive definition of C. The resulting definition, the ANSI standard, or "ANSI C", was completed late 1988.<p>
+ </div>
+                                        <ul class="nav navbar-nav post-nav">
+                                            <li><a href="#"><i class="fa fa-tag"></i>Learn C</a></li>
+                                            <li><a href="#"><i class="fa fa-heart"></i>32 Love</a></li>
+                                        </ul>
+                                   
+                                    <div class="blog-share">
+                                        <span class='st_facebook_hcount'></span>
+                                        <span class='st_twitter_hcount'></span>
+                                        <span class='st_linkedin_hcount'></span>
+                                        <span class='st_pinterest_hcount'></span>
+                                        <span class='st_email_hcount'></span>
+                                    </div>
+                                    
+                                    
+                                    
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                 </div>
+                <div class="col-md-3 col-sm-5">
+                    
+                        <div class="sidebar-item categories">
+                            <center><h2><b>Menu</b></h2></center>
+                            <ul class="nav navbar-stacked">
+                               <li class="active"><a href="../clanguage/Introduction-to-C.html">Introduction To C</a></li>
+                                <li ><a href="../clanguage/Tokens-in-C.html">Tokens In C</a></li>
+							</ul>
+                        </div>
+                      
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!--/#blog-->
+
+    <footer id="footer">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 text-center bottom-separator">
+                    <img src="../images/home/under.png" class="img-responsive inline" alt="">
+                </div>
+                <div class="col-md-4 col-sm-6">
+                    <div class="testimonial bottom">
+                        <h2>Testimonial</h2>
+                        <div class="media">
+                            <div class="pull-left">
+                                <a href="#"><img src="../images/home/profile1.png" alt=""></a>
+                            </div>
+                            <div class="media-body">
+                                <blockquote>I can't control what life serves me, but I can choose what to chew on, what to swallow ,and what to spit out.</blockquote>
+                                <h3><a href="#">- Ussaid Iqbal</a></h3>
+                            </div>
+                         </div>
+                     
+                    </div> 
+                </div>
+                <div class="col-md-3 col-sm-6">
+                    <div class="contact-info bottom">
+                        <h2>Contacts</h2>
+                        <address>
+                        E-mail: <a href="mailto:stackdiv@gmail.com">stackdiv@gmail.com</a> <br> 
+                        Phone: +92 (312) 6566623 <br> 
+                        Fax: +92 (995) 616851 <br> 
+                        </address>
+
+                        <h2>Address</h2>
+                        <address>
+                        New Model City, <br> 
+                        DHQ Road, <br> 
+                        Street #, 3, Haripur <br> 
+                        Pakistan <br> 
+                        </address>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-12">
+                    <div class="contact-form bottom">
+                        <h2>Send a message</h2>
+                        <form id="main-contact-form" name="contact-form" method="post" action="../sendemail.php">
+                            <div class="form-group">
+                                <input type="text" name="name" class="form-control" required="required" placeholder="Name">
+                            </div>
+                            <div class="form-group">
+                                <input type="email" name="email" class="form-control" required="required" placeholder="Email Id">
+                            </div>
+                            <div class="form-group">
+                                <textarea name="message" id="message" required="required" class="form-control" rows="8" placeholder="Your text here"></textarea>
+                            </div>                        
+                            <div class="form-group">
+                                <input type="submit" name="submit" class="btn btn-submit" value="Submit">
+                            </div>
+                        </form>
+                    </div>
+                </div>
+                <div class="col-sm-12
+                    <div class="copyright-text text-center">
+                        <p>&copy; DivStacks 2016. All Rights Reserved.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!--/#footer-->
+
+
+    <script type="text/javascript" src="../js/jquery.js"></script>
+    <script type="text/javascript" src="../js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="../js/lightbox.min.js"></script>
+    <script type="text/javascript" src="../js/wow.min.js"></script>
+    <script type="text/javascript" src="../js/main.js"></script>   
+</body>
+</html>

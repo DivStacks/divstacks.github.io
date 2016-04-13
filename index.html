@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -5,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="">
     <meta name="author" content="">
-    <title>Home | Triangle</title>
+    <title>Home | DivStacks</title>
     <link href="css/bootstrap.min.css" rel="stylesheet">
     <link href="css/font-awesome.min.css" rel="stylesheet">
     <link href="css/animate.min.css" rel="stylesheet"> 
@@ -23,8 +24,44 @@
     <link rel="apple-touch-icon-precomposed" sizes="72x72" href="images/ico/apple-touch-icon-72-precomposed.png">
     <link rel="apple-touch-icon-precomposed" href="images/ico/apple-touch-icon-57-precomposed.png">
 </head><!--/head-->
+<script>
 
-<body>
+function setCookie(cname,cvalue,exdays) {
+    var d = new Date();
+    d.setTime(d.getTime() + (exdays*24*60*60*1000));
+    var expires = "expires=" + d.toGMTString();
+    document.cookie = cname+"="+cvalue+"; "+expires;
+}
+
+function getCookie(cname) {
+    var name = cname + "=";
+    var ca = document.cookie.split(';');
+    for(var i=0; i<ca.length; i++) {
+        var c = ca[i];
+        while (c.charAt(0)==' ') c = c.substring(1);
+        if (c.indexOf(name) == 0) {
+            return c.substring(name.length, c.length);
+        }
+    }
+    return "";
+}
+
+function checkCookie() {
+    var user=getCookie("username");
+    if (user != "") {
+	document.getElementById("cookie").style.visibility = "hidden";
+	document.getElementById("cookie").style.height = "0px";
+    } else {
+	document.getElementById("cookie").style.visibility = "visible";
+       user = "divstack_user";
+       if (user != "" && user != null) {
+           setCookie("username", user, 30);
+       }
+    }
+	}
+</script>
+<body onload="checkCookie()">
+
 	<header id="header">      
         <div class="container">
             <div class="row">
@@ -52,70 +89,81 @@
                     </button>
 
                     <a class="navbar-brand" href="index.html">
-                    	<h1><img src="images/logo.png" alt="logo"></h1>
+						<div class="row">
+						<div class="col-md-6">
+                        <h1><img src="images/logo.png" alt="logo" height="50"width="50"></h1>
+						</div>
+						<div class="col-md-6">
+                        <h1>DivStacks</h1>
+						</div>
+                        
+						</div>
                     </a>
                     
                 </div>
                 <div class="collapse navbar-collapse">
                     <ul class="nav navbar-nav navbar-right">
-                        <li class="active"><a href="index.html">Home</a></li>
-                        <li class="dropdown"><a href="#">Pages <i class="fa fa-angle-down"></i></a>
+                        <li class="active"><a   href="index.html"><b>Home</b></a></li>
+                        <li class="dropdown"><a href="#"><b>Pages </b><i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="aboutus.html">About</a></li>
-                                <li><a href="aboutus2.html">About 2</a></li>
-                                <li><a href="service.html">Services</a></li>
-                                <li><a href="pricing.html">Pricing</a></li>
-                                <li><a href="contact.html">Contact us</a></li>
-                                <li><a href="contact2.html">Contact us 2</a></li>
-                                <li><a href="404.html">404 error</a></li>
-                                <li><a href="coming-soon.html">Coming Soon</a></li>
+                                <li><a href="404.html"><b>404 error</b></a></li>
+                                <li><a href="coming-soon.html"><b>Coming Soon</b></a></li>
                             </ul>
                         </li>                    
-                        <li class="dropdown"><a href="blog.html">Blog <i class="fa fa-angle-down"></i></a>
+                        <li ><a href="#"><b>Learn </b><i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="blog.html">Blog Default</a></li>
-                                <li><a href="blogtwo.html">Timeline Blog</a></li>
-                                <li><a href="blogone.html">2 Columns + Right Sidebar</a></li>
-                                <li><a href="blogthree.html">1 Column + Left Sidebar</a></li>
-                                <li><a href="blogfour.html">Blog Masonary</a></li>
-                                <li><a href="blogdetails.html">Blog Details</a></li>
+                                <li><a  href="clanguage/C-Language-Outline.html"><b>Learn C</b></a></li>
+                                <li><a href="coming-soon.html"><b>Learn C++</b></a></li>
+                                <li><a href="coming-soon.html"><b>Learn C#</b></a></li>
+                                <li><a href="coming-soon.html"><b>Learn HTML</b></a></li>
+                                <li><a href="coming-soon.html"><b>Learn CSS</b></a></li>
+                                <li><a href="coming-soon.html"><b>Learn JAVA</b></a></li>
+                                <li><a href="coming-soon.html"><b>Learn JAVASCRIPT</b></a></li>
+                               
                             </ul>
                         </li>
-                        <li class="dropdown"><a href="portfolio.html">Portfolio <i class="fa fa-angle-down"></i></a>
+                        <!-- <li class="dropdown"><a href="portfolio.html"><b>Portfolio</b> <i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
-                                <li><a href="portfolio.html">Portfolio Default</a></li>
-                                <li><a href="portfoliofour.html">Isotope 3 Columns + Right Sidebar</a></li>
-                                <li><a href="portfolioone.html">3 Columns + Right Sidebar</a></li>
-                                <li><a href="portfoliotwo.html">3 Columns + Left Sidebar</a></li>
-                                <li><a href="portfoliothree.html">2 Columns</a></li>
-                                <li><a href="portfolio-details.html">Portfolio Details</a></li>
+                                <li><a href="portfolio.html"><b>Portfolio Default</b></a></li>
+                                <li><a href="portfoliofour.html"><b>Isotope 3 Columns + Right Sidebar</b></a></li>
+                                <li><a href="portfolioone.html"><b>3 Columns + Right Sidebar</b></a></li>
+                                <li><a href="portfoliotwo.html"><b>3 Columns + Left Sidebar</b></a></li>
+                                <li><a href="portfoliothree.html"><b>2 Columns</b></a></li>
+                                <li><a href="portfolio-details.html"><b>Portfolio Details</b></a></li>
                             </ul>
                         </li>                         
-                        <li><a href="shortcodes.html ">Shortcodes</a></li>                    
+                        <li><a href="shortcodes.html "><b>Shortcodes</b></a></li>                    
                     </ul>
                 </div>
-                <div class="search">
+                <!--<div class="search">
                     <form role="form">
                         <i class="fa fa-search"></i>
                         <div class="field-toggle">
                             <input type="text" class="search-form" autocomplete="off" placeholder="Search">
                         </div>
                     </form>
-                </div>
+                </div>-->
             </div>
         </div>
     </header>
     <!--/#header-->
 
     <section id="home-slider">
+		
+	<div class="alert alert-danger fade in" id="cookie">
+                            <button type="button" class="close" data-dismiss="alert" aria-hidden="true">×</button>
+                            <h4>Alert! Cookies on the DivStacks website. </h4>
+                            <p>"We use cookies to ensure that we give you the best experience on our website. If you continue without changing your settings, we'll assume that you are happy to receive all cookies on the DivStacks website. However, if you would like to, you can change your cookie settings at any time."</p>
+                        </div>
         <div class="container">
             <div class="row">
                 <div class="main-slider">
                     <div class="slide-text">
-                        <h1>We Are Creative Nerds</h1>
-                        <p>Boudin doner frankfurter pig. Cow shank bresaola pork loin tri-tip tongue venison pork belly meatloaf short loin landjaeger biltong beef ribs shankle chicken andouille.</p>
-                        <a href="#" class="btn btn-common">SIGN UP</a>
-                    </div>
+                        <h1>What we do?</h1>
+                        <p>DivStacks offers practice exercises, instructional videos that empower learners to study at their own place in and outside of the classroom. We tackle C, C++, C#, Java, HTML, JavaScript, and more.</p>
+                        <!--<a href="#" class="btn btn-common">SIGN UP</a>-->
+						</div>
+                    
                     <img src="images/home/slider/hill.png" class="slider-hill" alt="slider image">
                     <img src="images/home/slider/house.png" class="slider-house" alt="slider image">
                     <img src="images/home/slider/sun.png" class="slider-sun" alt="slider image">
@@ -136,8 +184,8 @@
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="300ms">
                             <img src="images/home/icon1.png" alt="">
                         </div>
-                        <h2>Incredibly Responsive</h2>
-                        <p>Ground round tenderloin flank shank ribeye. Hamkevin meatball swine. Cow shankle beef sirloin chicken ground round.</p>
+                        <h2>Video Tutorials</h2>
+                        <p>Do you hate reading? No problem, with our videos you can learn programming in an easy way. </p>
                     </div>
                 </div>
                 <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
@@ -145,8 +193,8 @@
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="600ms">
                             <img src="images/home/icon2.png" alt="">
                         </div>
-                        <h2>Superior Typography</h2>
-                        <p>Hamburger ribeye drumstick turkey, strip steak sausage ground round shank pastrami beef brisket pancetta venison.</p>
+                        <h2>Android Apps</h2>
+                        <p>Looking for an app to learn programming? Why not download our apps and learn on the go.</p>
                     </div>
                 </div>
                 <div class="col-sm-4 text-center padding wow fadeIn" data-wow-duration="1000ms" data-wow-delay="900ms">
@@ -154,8 +202,8 @@
                         <div class="wow scaleIn" data-wow-duration="500ms" data-wow-delay="900ms">
                             <img src="images/home/icon3.png" alt="">
                         </div>
-                        <h2>Swift Page Builder</h2>
-                        <p>Venison tongue, salami corned beef ball tip meatloaf bacon. Fatback pork belly bresaola tenderloin bone pork kevin shankle.</p>
+                        <h2>Quizzes</h2>
+                        <p>Do you want to check your programming knowledge? Why not attempt our online quizzes.</p>
                     </div>
                 </div>
             </div>
@@ -169,20 +217,18 @@
                 <div class="row">
                     <div class="action take-tour">
                         <div class="col-sm-7 wow fadeInLeft" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <h1 class="title">Triangle Corporate Template</h1>
-                            <p>A responsive, retina-ready &amp; wide multipurpose template.</p>
+                            <h1 class="title">DivStacks</h1>
+                            <p>A place to learn &amp; grow.</p>
                         </div>
                         <div class="col-sm-5 text-center wow fadeInRight" data-wow-duration="500ms" data-wow-delay="300ms">
-                            <div class="tour-button">
-                                <a href="#" class="btn btn-common">TAKE THE TOUR</a>
-                             </div>
+                            
                         </div>
                     </div>
                 </div>
             </div>
         </div>
    </section>
-    <!--/#action-->
+    <!--
 
     <section id="features">
         <div class="container">
@@ -216,42 +262,10 @@
                 </div>
             </div>
         </div>
-    </section>
+    </section>/#action-->
      <!--/#features-->
 
-    <section id="clients">
-        <div class="container">
-            <div class="row">
-                <div class="col-sm-12">
-                    <div class="clients text-center wow fadeInUp" data-wow-duration="500ms" data-wow-delay="300ms">
-                        <p><img src="images/home/clients.png" class="img-responsive" alt=""></p>
-                        <h1 class="title">Happy Clients</h1>
-                        <p>Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. <br> Ut enim ad minim veniam, quis nostrud </p>
-                    </div>
-                    <div class="clients-logo wow fadeIn" data-wow-duration="1000ms" data-wow-delay="600ms">
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="images/home/client1.png" class="img-responsive" alt=""></a>
-                        </div>
-                        <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="images/home/client2.png" class="img-responsive" alt=""></a>
-                        </div>
-                         <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="images/home/client3.png" class="img-responsive" alt=""></a>
-                        </div>
-                         <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="images/home/client4.png" class="img-responsive" alt=""></a>
-                        </div>
-                         <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="images/home/client5.png" class="img-responsive" alt=""></a>
-                        </div>
-                         <div class="col-xs-3 col-sm-2">
-                            <a href="#"><img src="images/home/client6.png" class="img-responsive" alt=""></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-     </section>
+   
     <!--/#clients-->
 
     <footer id="footer">
@@ -268,36 +282,28 @@
                                 <a href="#"><img src="images/home/profile1.png" alt=""></a>
                             </div>
                             <div class="media-body">
-                                <blockquote>Nisi commodo bresaola, leberkas venison eiusmod bacon occaecat labore tail.</blockquote>
-                                <h3><a href="#">- Jhon Kalis</a></h3>
+                                <blockquote>I can't control what life serves me, but I can choose what to chew on, what to swallow ,and what to spit out.</blockquote>
+                                <h3><a href="#">- Ussaid Iqbal</a></h3>
                             </div>
                          </div>
-                        <div class="media">
-                            <div class="pull-left">
-                                <a href="#"><img src="images/home/profile2.png" alt=""></a>
-                            </div>
-                            <div class="media-body">
-                                <blockquote>Capicola nisi flank sed minim sunt aliqua rump pancetta leberkas venison eiusmod.</blockquote>
-                                <h3><a href="">- Abraham Josef</a></h3>
-                            </div>
-                        </div>   
+                     
                     </div> 
                 </div>
                 <div class="col-md-3 col-sm-6">
                     <div class="contact-info bottom">
                         <h2>Contacts</h2>
                         <address>
-                        E-mail: <a href="mailto:someone@example.com">email@email.com</a> <br> 
-                        Phone: +1 (123) 456 7890 <br> 
-                        Fax: +1 (123) 456 7891 <br> 
+                        E-mail: <a href="mailto:stackdiv@gmail.com">stackdiv@gmail.com</a> <br> 
+                        Phone: +92 (312) 6566623 <br> 
+                        Fax: +92 (995) 616851 <br> 
                         </address>
 
                         <h2>Address</h2>
                         <address>
-                        Unit C2, St.Vincent's Trading Est., <br> 
-                        Feeder Road, <br> 
-                        Bristol, BS2 0UY <br> 
-                        United Kingdom <br> 
+                        New Model City, <br> 
+                        DHQ Road, <br> 
+                        Street #, 3, Haripur <br> 
+                        Pakistan <br> 
                         </address>
                     </div>
                 </div>
@@ -320,10 +326,9 @@
                         </form>
                     </div>
                 </div>
-                <div class="col-sm-12">
+                <div class="col-sm-12
                     <div class="copyright-text text-center">
-                        <p>&copy; Your Company 2014. All Rights Reserved.</p>
-                        <p>Designed by <a target="_blank" href="http://www.themeum.com">Themeum</a></p>
+                        <p>&copy; DivStacks 2016. All Rights Reserved.</p>
                     </div>
                 </div>
             </div>
