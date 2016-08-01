@@ -16,10 +16,27 @@
  height: 100%;
 }
 </style>
+
+<style>
+table {
+    border-collapse: collapse;
+    border-spacing: 0;
+    width: 100%;
+    border: 1px solid #ddd;
+}
+
+th, td {
+    border: none;
+    text-align: left;
+    padding: 8px;
+}
+
+tr:nth-child(even){background-color: #f2f2f2}
+</style>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="C Language Tokens - Learn ANSI, GNU and K/R standard of C programming language with simple and easy examples covering basic C, language basics, literals, data types, functions, loops, arrays, pointers, structures, input and output, memory management, pre-processors, directives etc." />
-<meta name="keywords" content="C, tutorial, beginners, programming, ANSI, simple, examples, language basics, literals, data types, functions, loops, arrays, pointers, structures, input and output, memory management, pre-processors, directives." />
+    <meta name="keywords" content="C, tutorial, beginners, programming, ANSI, simple, examples, language basics, literals, data types, functions, loops, arrays, pointers, structures, input and output, memory management, pre-processors, directives." />
 
     <title>Tokens In C</title>
     <link href="../css/bootstrap.min.css" rel="stylesheet">
@@ -134,6 +151,7 @@ function checkCookie() {
                         <li class="dropdown active"><a href="#"><b>Learn </b><i class="fa fa-angle-down"></i></a>
                             <ul role="menu" class="sub-menu">
                                 <li><a class="active" href="../clanguage/C-Language-Outline.html"><b>Learn C</b></a></li>
+                                <li><a class="active" href="../clanguage/C-Language-Outline.html"><b>Learn C</b></a></li>
                                 <li><a href="../coming-soon.html"><b>Learn C++</b></a></li>
                                 <li><a href="../coming-soon.html"><b>Learn C#</b></a></li>
                                 <li><a href="../coming-soon.html"><b>Learn HTML</b></a></li>
@@ -153,7 +171,7 @@ function checkCookie() {
                                 <li><a href="../portfolio-details.html"><b>Portfolio Details</b></a></li>
                             </ul>
                         </li>                         
-                        <li><a href="../shortcodes.html "><b>Shortcodes</b></a></li> -->                   
+                        <li><a href="../shortcodes.html "><b>Shortcodes</b></a></li>                    
                     </ul>
                 </div>
                 <!--<div class="search">
@@ -282,55 +300,68 @@ function checkCookie() {
 <p>Keywords are the words whose meaning has already been explained to the compiler. The keywords cannot be used as variable names because if we do so, we are trying to assign a new meaning to the keyword, which is not allowed by the computer.</p>
 <p>There are total 32 keywords available in C. The list of all these keywords is given as follows:</p>
 
-<ul class="elements">
-<li><i class="fa fa-angle-right"></i>auto</li>
-<li><i class="fa fa-angle-right"></i>else</li>
-<li><i class="fa fa-angle-right"></i>long</li>
-<li><i class="fa fa-angle-right"></i>switch</li>
+
 
 
-<li><i class="fa fa-angle-right"></i>break</li>
-<li><i class="fa fa-angle-right"></i>enum</li>
-<li><i class="fa fa-angle-right"></i>register</li>
-<li><i class="fa fa-angle-right"></i>typedef</li>
+<div style="overflow-x:auto;">
+  <table>
+   
+    <tr>
+      <td>auto</td>
+      <td>else</td>
+      <td>long</td>
+      <td>switch</td>
+      <td>break</td>
+    </tr>
+<tr>
+      
+      <td>enum</td>
+      <td>register</td>
+      <td>typedef</td>
+      <td>case</td>
+      <td>extern</td>
+    </tr>
+    <tr>
+      <td>return</td>
+      <td>char</td>
+      <td>float</td>
+      <td>short</td>
+      <td>unsigned</td>
+     
+    </tr>
+<tr>
+      <td>for</td>
+      <td>signed</td>
+      <td>void</td>
+      <td>continue</td>
+      <td>goto</td>
+    </tr>
+    <tr>
+      <td>volatile</td>
+      <td>union</td>
+      <td>sizeof</td>
+      <td>default</td>
+      <td>if</td>
+      
+      
+    </tr>
 
+    <tr>
+      <td>static</td>
+      <td>while</td>
+      <td>do</td>
+      <td>int</td>
+      <td>struct</td>
+      
+    </tr>
+ <tr>
+         <td>const</td>
+      <td>_Parked</td>
+      <td>double</td>
+    </tr>
+  </table>
+</div>
 
-<li><i class="fa fa-angle-right"></i>case</li>
-<li><i class="fa fa-angle-right"></i>extern</li>
-<li><i class="fa fa-angle-right"></i>return</li>
-<li><i class="fa fa-angle-right"></i>union</li>
-
-
-<li><i class="fa fa-angle-right"></i>char</li>
-<li><i class="fa fa-angle-right"></i>float</li>
-<li><i class="fa fa-angle-right"></i>short</li>
-<li><i class="fa fa-angle-right"></i>unsigned</li>
-
-
-<li><i class="fa fa-angle-right"></i>const</li>
-<li><i class="fa fa-angle-right"></i>for</li>
-<li><i class="fa fa-angle-right"></i>signed</li>
-<li><i class="fa fa-angle-right"></i>void</li>
-
-
-<li><i class="fa fa-angle-right"></i>continue</li>
-<li><i class="fa fa-angle-right"></i>goto</li>
-<li><i class="fa fa-angle-right"></i>sizeof</li>
-<li><i class="fa fa-angle-right"></i>volatile</li>
-
-
-<li><i class="fa fa-angle-right"></i>default</li>
-<li><i class="fa fa-angle-right"></i>if</li>
-<li><i class="fa fa-angle-right"></i>static</li>
-<li><i class="fa fa-angle-right"></i>while</li>
-
-
-<li><i class="fa fa-angle-right"></i>do</li>
-<li><i class="fa fa-angle-right"></i>int</li>
-<li><i class="fa fa-angle-right"></i>struct</li>
-<li><i class="fa fa-angle-right"></i>_Parked</li>
-<li><i class="fa fa-angle-right"></i>double</li>
-</ul>
  </div>
                                         <ul class="nav navbar-nav post-nav">
                                             <li><a href="#"><i class="fa fa-tag"></i>Learn C</a></li>

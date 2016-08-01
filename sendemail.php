@@ -3,7 +3,7 @@ $name       = @trim(stripslashes($_POST['name']));
 $from       = @trim(stripslashes($_POST['email'])); 
 $subject    = @trim(stripslashes($_POST['subject'])); 
 $message    = @trim(stripslashes($_POST['message'])); 
-$to   		= 'email@email.com';//replace with your email
+$to   		= 'stackdiv@gmail.com';//replace with your email
 
 $headers   = array();
 $headers[] = "MIME-Version: 1.0";
@@ -16,3 +16,4 @@ $headers[] = "X-Mailer: PHP/".phpversion();
 mail($to, $subject, $message, $headers);
 
 die;
+ ?>
