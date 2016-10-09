@@ -1,3 +1,8 @@
+<Variable name="keycolor" description="Main Color" type="color" default="#f9f369" value="#f9f369"/>
+<Variable name="colorPrimary" description="Main Color" type="color" default="#fa4b2a" value="#fa4b2a"/>
+<Variable name="colorPrimaryDark" description="Background Color Of The Footer" type="color" default="#60a7a3" value="#60a7a3"/>  <Variable name="colorAccent" description="Background Color Of The Footer" type="color" default="#00695C" value="#00695C"/> <Variable name="textColor" description="Text Color Dark" type="color" default="#403c39" value="#403c39"/>
+
+
 @import 'https://fonts.googleapis.com/css?family=Cantora+One|NTR|Open+Sans';
 [data-icon]:before {
     content: attr(data-icon);
