@@ -654,7 +654,7 @@ button:active {
     display: table;
 }
 header {
-    background: $colorPrimary;
+    background: #fa4b2a;
     height: 70px;
     color: #fff;
     font-family: 'Open Sans', sans-serif;
@@ -877,14 +877,14 @@ a.Sponsored {
     color: #f9f369;
 }
 .teal {
-    color: $colorPrimary;
+    color: #fa4b2a;
 }
 .fauthors .row {
     margin-bottom: 0px;
 }
 footer {
     width: 100%;
-    background-color: $colorPrimary;
+    background-color: #fa4b2a;
     color: #fff;
     min-height: 246px;
     padding-top: 2rem;
@@ -960,10 +960,10 @@ ul.widrp li a {
     display: block;
 }
 ul.widrp li a:hover {
-    color: $colorPrimary;
+    color: #fa4b2a;
 }
 .bbar {
-    background-color: $colorPrimary;
+    background-color: #fa4b2a;
     color: #fff;
     padding: 3px 0px;
     font-size: 14px;
@@ -990,7 +990,7 @@ ul.widrp li a:hover {
     left: 0;
     bottom: 0;
     margin: 0 auto;
-    background-color: $colorPrimary;
+    background-color: #fa4b2a;
     -webkit-transition: all 0.3s ease 0s;
     transition: all 0.3s ease 0s;
 }
@@ -1003,7 +1003,7 @@ ul.widrp li a:hover {
     right: 0;
     bottom: 0;
     margin: 0 auto;
-    background-color: $colorPrimary;
+    background-color: #fa4b2a;
    
 }
 .mtitle:hover::before,
@@ -1012,7 +1012,7 @@ ul.widrp li a:hover {
 }
 .mtitle2 {
     font-family: 'Cantora One', sans-serif;
-    color: $colorPrimary;
+    color: #fa4b2a;
     font-size: 30px;
     text-align: left;
     padding: 1rem 0rem;
@@ -1132,7 +1132,7 @@ padding-left: 18px;
     padding-bottom: 40%!important;
 }
 .videos {
-    background-color: $colorPrimary;
+    background-color: #fa4b2a;
     box-shadow: inset 0px 0px 5px 0px rgba(0, 0, 0, 0.3);
     padding: 1rem;
     margin-bottom: 1rem;
@@ -1194,7 +1194,7 @@ padding-left: 18px;
     color: #252525!important;
 }
 .postie h3:hover {
-    color: $colorPrimary!important;
+    color: #fa4b2a!important;
 }
 h2.aname {
     font-size: 28px;
@@ -1460,7 +1460,7 @@ form.search-form {
 }
 .catart:hover h3,
 .card:hover h3 {
-    color: $colorPrimary;
+    color: #fa4b2a;
     -webkit-transition: all 0.2s ease-in-out 0s;
     -moz-transition: all 0.2s ease-in-out 0s;
     -ms-transition: all 0.2s ease-in-out 0s;
@@ -1574,7 +1574,7 @@ article {
     font-size: 16px;
     padding: 0px;
     text-indent: 3px;
-    color: $colorPrimary;
+    color: #fa4b2a;
 }
 .yb .date {
     color: #252525;
@@ -1629,7 +1629,7 @@ article {
     color: #252525;
 }
 .tags a:hover {
-    background-color: $colorPrimary;
+    background-color: #fa4b2a;
     color: white;
 }
 .tags a:nth-child(n+6) {
@@ -1989,7 +1989,7 @@ nav.navigation.post-navigation h2.screen-reader-text {
     line-height: 1.8;
     font-family: 'Open Sans', sans-serif;
     font-weight: 100;
-    background: $colorPrimary;
+    background: #fa4b2a;
 }
 .mbinfo img {
     float: left;
@@ -2180,7 +2180,7 @@ h2.yaseer {
     border-radius: 4px;
     -ms-user-select: none;
     user-select: none;
-    background: $colorPrimary
+    background: #fa4b2a
 }
 .plyr input[type=range]::-ms-thumb {
     position: relative;
@@ -2207,17 +2207,17 @@ h2.yaseer {
     outline-offset: 3px
 }
 .plyr input[type=range]:active::-webkit-slider-thumb {
-    background: $colorPrimary;
+    background: #fa4b2a;
     border-color: #fff;
     transform: scale(1.25)
 }
 .plyr input[type=range]:active::-moz-range-thumb {
-    background: $colorPrimary;
+    background: #fa4b2a;
     border-color: #fff;
     transform: scale(1.25)
 }
 .plyr input[type=range]:active::-ms-thumb {
-    background: $colorPrimary;
+    background: #fa4b2a;
     border-color: #fff;
     transform: scale(1.25)
 }
@@ -2373,7 +2373,7 @@ h2.yaseer {
 }
 .plyr--video .plyr__controls button.tab-focus:focus,
 .plyr--video .plyr__controls button:hover {
-    background: $colorPrimary;
+    background: #fa4b2a;
     color: #fff
 }
 .plyr--audio .plyr__controls {
@@ -2387,7 +2387,7 @@ h2.yaseer {
 .plyr--audio .plyr__controls button.tab-focus:focus,
 .plyr--audio .plyr__controls button:hover,
 .plyr__play-large {
-    background: $colorPrimary;
+    background: #fa4b2a;
     color: #fff
 }
 .plyr__play-large {
@@ -2578,7 +2578,7 @@ h2.yaseer {
 .plyr__progress--played,
 .plyr__volume--display {
     z-index: 1;
-    color: $colorPrimary;
+    color: #fa4b2a;
     background: 0 0;
     transition: none
 }
@@ -3739,7 +3739,7 @@ input{
 	opacity: 0;
 	visibility: hidden;
     border-radius: 5px;
-    background: $keycolor;
+    background: #f9f369;
     box-shadow: 0 0 5px #4D4D4D;
     -webkit-box-shadow: 0 0 5px #4D4D4D;
 	z-index: 9999;
@@ -3751,7 +3751,7 @@ input{
 }
 
 .anchor-hover:hover {
-	color: $keycolor;
+	color: #f9f369;
 }
 
 .widget-item-control {display: none;}
@@ -3770,7 +3770,7 @@ input{
 
 .item .post-body a {
     font-weight: 500;
-    color: $colorPrimary;
+    color: #fa4b2a;
     text-decoration: underline;
 }
 
@@ -3940,7 +3940,7 @@ div#top-social .fa-linkedin {
 }
 
 #main-nav li a:hover {
-    background: $keycolor;
+    background: #f9f369;
 	color: #fff;
 }
 
@@ -3993,7 +3993,7 @@ body[data-main="false"] #slider {
 
 .category {
     display: inline-block;
-    background: $keycolor;
+    background: #f9f369;
     color: #fff !important;
     padding: 8px 15px;
     font-size: .75rem;
@@ -4057,7 +4057,7 @@ body[data-main="false"] #slider {
 
 .slider-small-post.slick-current:after {
     content: '';
-    background: $keycolor;
+    background: #f9f369;
 	opacity: .5;
 }
 
@@ -4171,7 +4171,7 @@ body[data-main="false"] .videos {
 .blog-posts-wrapper .widget .title,
 #featured-posts .title {
 	font-family: 'Roboto', sans-serif;
-    border-left: 5px solid $keycolor;
+    border-left: 5px solid #f9f369;
     padding-left: 20px;
     text-transform: uppercase;
     margin-bottom: 25px;
@@ -4187,7 +4187,7 @@ body[data-main="false"] .videos {
     content: '';
     display: inline-block;
     position: absolute;
-    background: $keycolor;
+    background: #f9f369;
     top: 0;
     right: 0;
     bottom: 0;
@@ -4201,7 +4201,7 @@ body[data-main="false"] .videos {
     content: '';
     display: inline-block;
     position: absolute;
-    background: $colorPrimary;
+    background: #fa4b2a;
     top: 0;
     bottom: 0;
     width: 1180px;
@@ -4332,7 +4332,7 @@ h3.post-title.heading {
 ============================================*/
 
 .post-header {
-    background: $colorPrimary;
+    background: #fa4b2a;
     margin-bottom: 20px;
     padding: 10px;
 }
@@ -4357,7 +4357,7 @@ span.post-author.vcard {
 }
 
 a.post-label-anchor:hover {
-    color: $keycolor;
+    color: #f9f369;
 }
 
 h2.post-title.entry-title.heading {
@@ -4469,7 +4469,7 @@ div#related-posts p {
 }
 
 .related-post-item:hover .related-post-title a {
-	color: $keycolor;
+	color: #f9f369;
 }
 
 .related-post-img {
@@ -4527,7 +4527,7 @@ div#related-posts p {
 
 #comments .comment-actions > a {
     font-size: .75rem;
-    background: $keycolor;
+    background: #f9f369;
     display: inline-block;
     padding: 3px 8px;
     color: #fff;
@@ -4571,7 +4571,7 @@ p.error-message-big {
 }
 
 .error-message-small a {
-    color: $keycolor;
+    color: #f9f369;
 }
 
 .error-message-small a:hover {
@@ -4671,7 +4671,7 @@ li.twocolumns-item .heading {
     z-index: 3;
     top: 15px;
     left: 15px;
-    background: $keycolor;
+    background: #f9f369;
 }
 
 .bleft .post-category:hover {
@@ -4679,12 +4679,12 @@ li.twocolumns-item .heading {
 }
 
 .bleft .post-title:hover {
-  background: $keycolor;
+  background: #f9f369;
 }
 
 .bleft .other-posts {
   background: #E6E6E6;
-  border-left: 5px solid $keycolor;
+  border-left: 5px solid #f9f369;
   height: 406px;
   padding: 1% 0;
   width: 37.1794872%;
@@ -4698,7 +4698,7 @@ li.twocolumns-item .heading {
 }
 
 .bleft .content-item:hover {
-  background: $keycolor;
+  background: #f9f369;
 }
 
 .bleft .content-item:hover h2 {
@@ -4747,11 +4747,11 @@ li.twocolumns-item .heading {
     line-height: 1.6;
     color: #fff;
     text-transform: capitalize;
-    background-color: $colorPrimary;
+    background-color: #fa4b2a;
 }
 
 .bsummary .post-image:hover .post-title {
-  background: $keycolor;
+  background: #f9f369;
   color: #fff;
 }
 
@@ -4794,7 +4794,7 @@ li.twocolumns-item .heading {
 }
 
 .bsummary .other-posts .heading:hover {
-  color: $keycolor;
+  color: #f9f369;
 }
 
 .bsummary .publish-date,
@@ -4849,7 +4849,7 @@ li.twocolumns-item .heading {
     left: 0;
     width: 10px;
     height: 3px;
-    background: $keycolor;
+    background: #f9f369;
 }
 
 .sidebar-wrapper .widget > h2:after {
@@ -4859,7 +4859,7 @@ li.twocolumns-item .heading {
     left: 13px;
     width: 70px;
     height: 3px;
-    background: $keycolor;
+    background: #f9f369;
 }
 
 /* Sidebar Tabs
@@ -4900,7 +4900,7 @@ li.twocolumns-item .heading {
 }
 
 .activetab {
-  background-color: $keycolor;
+  background-color: #f9f369;
   color: #fff;
 }
 
@@ -5242,9 +5242,9 @@ li.recent-post-item:before {
 }
 
 .label-size a:only-child:hover {
-    background: $keycolor;
+    background: #f9f369;
     color: #fff;
-	border-color: $keycolor;
+	border-color: #f9f369;
 }
 
 .label-count {
@@ -5269,7 +5269,7 @@ li.recent-post-item:before {
     top: 0;
     height: 9px;
     width: 3px;
-    background: $keycolor;
+    background: #f9f369;
     z-index: 3;
 }
 
@@ -5302,18 +5302,18 @@ li.recent-post-item:before {
 
 .list-label-widget-content li span {
     display: inline-block;
-    border: 1px solid $keycolor;
+    border: 1px solid #f9f369;
     height: 21px;
     line-height: 5px;
     font-size: .7rem;
     font-weight: 500;
-    color: $keycolor;
+    color: #f9f369;
     padding: 6px;
     text-align: center;
 }
 
 .list-label-widget-content li:hover span {
-    background: $keycolor;
+    background: #f9f369;
     color: #fff;
 }
 
@@ -5339,7 +5339,7 @@ td:last-child {
 input.follow-by-email-submit {
     height: 40px !important;
     border-radius: 0 !important;
-    background: $keycolor !important;
+    background: #f9f369 !important;
     font-size: 0 !important;
     margin-left: 6px !important;
     width: 45px !important;
@@ -5851,7 +5851,7 @@ input#search-input:focus,
 
 #mobile-close-btn {
     display: block;
-    background: $keycolor;
+    background: #f9f369;
     color: #fff;
     width: 100%;
     padding: 10px;
